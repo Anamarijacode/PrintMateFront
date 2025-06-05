@@ -1,0 +1,27 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.PrintMate" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+    <color name="background_color_primary">#2F2250</color>
+    <color name="background_color_secondary">#65558F</color>
+    <!--Gumbi-->
+    <color name="button_color_primary">#2A1958</color>
+    <color name="button_color_secondary">#65558F</color>
+
+    <!--Inputi-->
+    <color name="input_primary">#65558F</color>
+
+    <!--Text-->
+    <color name="text_color_primary">#F5F5F5</color>
+</resources>
