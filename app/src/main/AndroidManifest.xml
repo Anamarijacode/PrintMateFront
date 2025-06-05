@@ -15,6 +15,12 @@
         android:theme="@style/Theme.PrintMate"
         tools:targetApi="31">
         <activity
+            android:name=".ProizvodaciActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LanguageActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

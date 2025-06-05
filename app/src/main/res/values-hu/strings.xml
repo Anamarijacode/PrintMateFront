@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="language_chose">Válasszon nyelvet</string>
+    <string name="zapocnimo">Kezdjük el</string>
+    <string name="email">E-mail</string>
+    <string name="enter_email">Adja meg e-mail címét</string>
+    <string name="lozinka">Jelszó</string>
+    <string name="unseite_lozinku">Adja meg jelszavát</string>
+    <string name="prijavi_se_btn">Jelentkezzen be</string>
+    <string name="prijavi_se_btn_google">Jelentkezzen be a Google-lal</string>
+    <string name="nemas_racun_link">Nincs fiókod? Regisztrálj itt</string>
+    <string name="potvrdi_lozinku">Erősítse meg a jelszót</string>
+    <string name="ponovni_unos_lozinke">Írja be újra a jelszót</string>
+    <string name="ime">Név</string>
+    <string name="unesite_ime">Írja be a nevét</string>
+    <string name="prezime">Vezetéknév</string>
+    <string name="prezime_unos">Adja meg vezetéknevét</string>
+    <string name="broj_mobitela">Telefonszám</string>
+    <string name="unesite_broj_mobitela">Adja meg telefonszámát</string>
+    <string name="registriraj_se_btn">Nyilvántartás</string>
+    <string name="registriraj_se_googlom_btn">Regisztráljon a Google-nál</string>
+    <string name="odaberi_j">Válasszon nyelvet</string>
+    <string name="engleski">Angol</string>
+    <string name="hrvatski">Horvát</string>
+    <string name="bosanski">Bosnyák</string>
+    <string name="srpski">Szerb</string>
+    <string name="madarski">Magyar</string>
+    <string name="slovacki">Szlovák</string>
+    <string name="slovenski">Szláv</string>
+</resources>

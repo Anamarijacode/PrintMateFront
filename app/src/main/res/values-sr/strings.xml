@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="language_chose">Изаберите језик</string>
+    <string name="zapocnimo">Хајде да почнемо!</string>
+    <string name="email">E-маил</string>
+    <string name="enter_email">Унесите своју адресу е-поште</string>
+    <string name="lozinka">лозинка</string>
+    <string name="unseite_lozinku">Унесите своју лозинку</string>
+    <string name="prijavi_se_btn">Пријавите се</string>
+    <string name="prijavi_se_btn_google">Пријавите се са Гоогле-ом</string>
+    <string name="nemas_racun_link">Немате налог? Региструјте се овде</string>
+    <string name="potvrdi_lozinku">Потврдите лозинку</string>
+    <string name="ponovni_unos_lozinke">Поново унесите лозинку</string>
+    <string name="ime">Име</string>
+    <string name="unesite_ime">Унесите своје име</string>
+    <string name="prezime">Презиме</string>
+    <string name="prezime_unos">Унесите своје презиме</string>
+    <string name="broj_mobitela">Број телефона</string>
+    <string name="unesite_broj_mobitela">Унесите свој број телефона</string>
+    <string name="registriraj_se_btn">Региструјте се</string>
+    <string name="registriraj_se_googlom_btn">Региструјте се на Гоогле-у</string>
+    <string name="odaberi_j">Изаберите језик</string>
+    <string name="engleski">Eнглески</string>
+    <string name="hrvatski">Xрватски</string>
+    <string name="bosanski">босански</string>
+    <string name="srpski">Cрпски</string>
+    <string name="madarski">Mађарски</string>
+    <string name="slovacki">Cловачки</string>
+    <string name="slovenski">Слав</string>
+</resources>

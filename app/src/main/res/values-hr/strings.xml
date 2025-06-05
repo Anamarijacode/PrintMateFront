@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="language_chose">Odaberite jezik</string>
+    <string name="zapocnimo">Započnimo!</string>
+    <string name="email">E-mail</string>
+    <string name="enter_email">Unesite svoju e-mail adresu</string>
+    <string name="lozinka">Lozinka</string>
+    <string name="unseite_lozinku">Unesite svoju lozinku</string>
+    <string name="prijavi_se_btn">Prijavite se</string>
+    <string name="prijavi_se_btn_google">Prijavite se sa Google-om</string>
+    <string name="nemas_racun_link">Nemate račun? Registrirajte se ovdje.</string>
+    <string name="potvrdi_lozinku">Potvrdite lozinku</string>
+    <string name="ponovni_unos_lozinke">Ponovo unesite lozinku</string>
+    <string name="ime">Ime</string>
+    <string name="unesite_ime">Unesite svoje ime</string>
+    <string name="prezime">Prezime</string>
+    <string name="prezime_unos">Unesite svoje prezime</string>
+    <string name="broj_mobitela">Broj telefona</string>
+    <string name="unesite_broj_mobitela">Unesite svoj broj telefona</string>
+    <string name="registriraj_se_btn">Registrirajte se</string>
+    <string name="registriraj_se_googlom_btn">Registrirajte se sa Google</string>
+    <string name="odaberi_j">Odaberite jezik</string>
+    <string name="engleski">Engleski</string>
+    <string name="hrvatski">Hrvatski</string>
+    <string name="bosanski">Bosanski</string>
+    <string name="srpski">Srpski</string>
+    <string name="madarski">Mađarski</string>
+    <string name="slovacki">Slovački</string>
+    <string name="slovenski">Slovenski</string>
+</resources>

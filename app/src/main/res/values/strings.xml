@@ -1,3 +1,53 @@
 <resources>
-    <string name="app_name">PrintMate</string>
+    <string name="app_name" translatable="false">PrintMate</string>
+    <string name="language_chose">Choose a language</string>
+    <string name="zapocnimo">Let\'s start!</string>
+    <string name="email">E-mail</string>
+    <string name="enter_email">Enter your email address</string>
+    <string name="lozinka">Password</string>
+    <string name="unseite_lozinku">Enter your password</string>
+    <string name="prijavi_se_btn">Log in</string>
+    <string name="prijavi_se_btn_google">Log in with Google</string>
+    <string name="nemas_racun_link">Don\'t have an account? Register here</string>
+    <string name="potvrdi_lozinku">Confirm password</string>
+    <string name="ponovni_unos_lozinke">Enter the password again</string>
+    <string name="ime">Name</string>
+    <string name="unesite_ime">Enter your name</string>
+    <string name="prezime">Surname</string>
+    <string name="prezime_unos">Enter your surname</string>
+    <string name="broj_mobitela">Phone number</string>
+    <string name="unesite_broj_mobitela">Enter your phone number</string>
+    <string name="registriraj_se_btn">Register</string>
+    <string name="registriraj_se_googlom_btn">Register with Google</string>
+
+    <string name="odaberi_j">Choose a language</string>
+    <string name="engleski">English</string>
+    <string name="hrvatski">Croatian</string>
+    <string name="bosanski">Bosnian</string>
+    <string name="srpski">Serbian</string>
+    <string name="madarski">Hungarian</string>
+    <string name="slovacki">Slovak</string>
+    <string name="slovenski">Slovenian</string>
+
+
+    <string-array name="languages">
+        <item>@string/odaberi_j</item>
+        <item>@string/engleski</item>
+        <item>@string/hrvatski</item>
+        <item>@string/bosanski</item>
+        <item>@string/srpski</item>
+        <item>@string/slovacki</item>
+        <item>@string/slovenski</item>
+        <item>@string/madarski</item>
+    </string-array>
+    <string name="odaberite_proizvodaca">Select the manufacturer</string>
+    <string name="preskoci_btn">Skip</string>
+    <string name="proizvodaci_serch">Enter the name of the manufacturer</string>
+    <string name="odaberite_printer">Select 3D printer</string>
+    <string name="d_printer_serch">Enter the name of 3D printer</string>
+    <string name="odaberi_btn">Select</string>
+    <string name="specifikacije_printera">Printer specifications</string>
+    <string name="daljen_upute">Further instructions</string>
+    <string name="vrati_se">Go back</string>
+    <string name="nastvi_btn">Continue</string>
 </resources>
