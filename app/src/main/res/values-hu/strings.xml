@@ -7,7 +7,7 @@
     <string name="lozinka">Jelszó</string>
     <string name="unseite_lozinku">Adja meg jelszavát</string>
     <string name="prijavi_se_btn">Jelentkezzen be</string>
-    <string name="prijavi_se_btn_google">Jelentkezzen be a Google-lal</string>
+    <string name="prijavi_se_btn_google">Jelentkezzen be a Google</string>
     <string name="nemas_racun_link">Nincs fiókod? Regisztrálj itt</string>
     <string name="potvrdi_lozinku">Erősítse meg a jelszót</string>
     <string name="ponovni_unos_lozinke">Írja be újra a jelszót</string>

@@ -7,7 +7,7 @@
     <string name="lozinka">Heslo</string>
     <string name="unseite_lozinku">Zadajte svoje heslo</string>
     <string name="prijavi_se_btn">Prihláste sa</string>
-    <string name="prijavi_se_btn_google">Prihláste sa pomocou</string>
+    <string name="prijavi_se_btn_google">Prihláste sa pomocou Google</string>
     <string name="nemas_racun_link">Nemáte účet? Zaregistrujte sa tu</string>
     <string name="potvrdi_lozinku">Potvrďte heslo</string>
     <string name="ponovni_unos_lozinke">Zadajte heslo znova</string>

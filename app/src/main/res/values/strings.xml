@@ -50,4 +50,9 @@
     <string name="daljen_upute">Further instructions</string>
     <string name="vrati_se">Go back</string>
     <string name="nastvi_btn">Continue</string>
+    <string name="default_web_client_id">
+        468295654871-2bo041s15c8o6me3vl7j08cfl44324tr.apps.googleusercontent.com
+    </string>
+
+
 </resources>

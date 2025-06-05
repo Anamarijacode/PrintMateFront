@@ -24,4 +24,5 @@
 
     <!--Text-->
     <color name="text_color_primary">#F5F5F5</color>
+    <color name="background_color_primary_variant">#2F2250</color>
 </resources>

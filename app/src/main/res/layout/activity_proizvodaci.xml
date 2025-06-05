@@ -5,40 +5,137 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProizvodaciActivity"
-    android:background="@color/background_color_secondary">
+    tools:context=".Activity.ProizvodaciActivity"
+    android:background="@color/background_color_primary_variant">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutBroj"
+        android:layout_width="344dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/rounded_search_bar"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPrijavise">
+
+
+        <ImageView
+            android:id="@+id/filterSpinner"
+            android:layout_width="41dp"
+            android:layout_height="34dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="10dp"
+            android:padding="4dp"
+            android:src="@drawable/baseline_dehaze_24"
+            app:layout_constraintEnd_toStartOf="@+id/separator"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/separator"
+            android:layout_width="1dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginEnd="5dp"
+            android:background="@color/background_color_primary_variant"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/searchView"
+            app:layout_constraintStart_toEndOf="@+id/filterSpinner"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchView"
+            android:layout_width="208dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="54dp"
+            android:layout_marginBottom="2dp"
+            android:iconifiedByDefault="false"
+            android:queryHint="Unesite naziv proizvođača"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/separator"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!--search.setQueryHint("Custom Search Hint");
+        SearchView searchView = findViewById(R.id.searchView);
+        ImageView searchIcon = searchView.findViewById(androidx.appcompat.R.id.search_mag_icon);
+searchIcon.setColorFilter(ContextCompat.getColor(this, R.color.tvoja_boja), PorterDuff.Mode.SRC_IN);
+ImageView closeButton = searchView.findViewById(androidx.appcompat.R.id.search_close_btn);
+closeButton.setColorFilter(ContextCompat.getColor(this, R.color.tvoja_boja), PorterDuff.Mode.SRC_IN);
+EditText searchText = searchView.findViewById(androidx.appcompat.R.id.search_src_text);
+searchText.setTextColor(ContextCompat.getColor(this, R.color.tvoja_boja));
+searchText.setHintTextColor(ContextCompat.getColor(this, R.color.tvoja_boja));
+
+-->
+
+
+        <!-- SearchView -->
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/todaberiteJezik"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins"
-        android:text="@string/language_chose"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="66dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/odaberite_proizvodaca"
         android:textColor="@color/text_color_primary"
         android:textSize="16sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintEnd_toStartOf="@+id/btnPrijavise"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnPrijavise"
         android:layout_width="100dp"
         android:layout_height="40dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginBottom="25dp"
         android:background="@drawable/rounded_button"
-        android:backgroundTint="@color/button_color_secondary"
+        android:backgroundTint="@color/button_color_primary_varian"
         android:fontFamily="@font/poppins"
         android:paddingTop="5dp"
-        android:text="@string/prijavi_se_btn"
+        android:text="@string/preskoci_btn"
         android:textAllCaps="false"
-        android:textColor="@color/text_color_primary"
+        android:textColor="@color/text_color"
         android:textSize="16dp"
-        tools:layout_editor_absoluteX="278dp"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutBroj"
+        app:layout_constraintStart_toEndOf="@+id/todaberiteJezik"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="409dp"
-        android:layout_height="673dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="57dp" />
+        android:id="@+id/recyclerView"
+        android:layout_width="419dp"
+        android:layout_height="535dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="241dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginEnd="86dp"
+        android:layout_marginBottom="4dp"
+        android:src="@drawable/logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

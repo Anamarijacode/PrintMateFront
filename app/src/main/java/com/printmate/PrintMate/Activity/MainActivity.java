@@ -1,9 +1,12 @@
-package com.printmate.PrintMate;
+package com.printmate.PrintMate.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.printmate.PrintMate.Klijenti.OctoPrintController;
+import com.printmate.PrintMate.R;
 
 import okhttp3.Call;
 import okhttp3.Callback;

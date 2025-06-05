@@ -7,7 +7,7 @@
     <string name="lozinka">Lozinka</string>
     <string name="unseite_lozinku">Unesite svoju lozinku</string>
     <string name="prijavi_se_btn">Prijavite se</string>
-    <string name="prijavi_se_btn_google">Prijavite se sa Google-om</string>
+    <string name="prijavi_se_btn_google">Prijavite se sa Google</string>
     <string name="nemas_racun_link">Nemate račun? Registrirajte se ovdje.</string>
     <string name="potvrdi_lozinku">Potvrdite lozinku</string>
     <string name="ponovni_unos_lozinke">Ponovo unesite lozinku</string>
