@@ -78,8 +78,7 @@ public class RegisterActivity extends AppCompatActivity {
         String password2 = etLozinkaPonovna.getText().toString().trim();
         String firstName = etIme.getText().toString().trim();
         String lastName  = etPrezime.getText().toString().trim();
-        String dob       = etDateOfBirth.getText().toString().trim();          // npr. “1990-10-05”
-        String gender    = spinnerGender.getSelectedItem().toString();         // npr. “M” ili “F” ili “Other”
+     
 
         // Validacija
         if (email.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
@@ -107,11 +106,7 @@ public class RegisterActivity extends AppCompatActivity {
             etPrezime.requestFocus();
             return;
         }
-        if (TextUtils.isEmpty(dob)) {
-            etDateOfBirth.setError("Datum rođenja je obavezan.");
-            etDateOfBirth.requestFocus();
-            return;
-        }
+       
         // TODO: Dodati provjeru formata datuma ako treba, ili koristiti DatePicker
 
         // Sastavi DTO za registraciju
@@ -120,8 +115,6 @@ public class RegisterActivity extends AppCompatActivity {
         request.password    = password;
         request.firstName   = firstName;
         request.lastName    = lastName;
-        request.dateOfBirth = dob;          // Backend očekuje string “yyyy-MM-dd”
-        request.genderValue = gender;       // Provjeri da li backend želi “M”/“F” ili “Male”/“Female”
 
         AuthApi authApi = ApiClient.getAuthApi();
         Call<AuthResponse> call = authApi.register(request);
@@ -162,8 +155,6 @@ public class RegisterActivity extends AppCompatActivity {
     private void startGoogleSignIn() {
         // Konfiguriraj GoogleSignInOptions: zatraži ID token
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                // Ovdje moraš postaviti svoj web client ID u strings.xml:
-                // <string name="default_web_client_id">TVOJ_WEB_CLIENT_ID</string>
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
