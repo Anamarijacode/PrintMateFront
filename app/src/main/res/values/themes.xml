@@ -23,13 +23,22 @@
 
     <!--Inputi-->
     <color name="input_primary">#F1EBFC</color>
-    <color name="text_color">#65558F</color>
+    <color name="input">#65558F</color>
+    <color name="input_secondary">#EADDFF</color>
 
     <!--Text-->
+    <color name="text_color">#65558F</color>
     <color name="text_color_primary">#3B1D71</color>
     <color name="text_color_secondary">#F5F5F5</color>
+    <color name="text_color_primary_variant">#65558F</color>
 
     <color name="background_color_primary_variant">#F5F5F5</color>
+
+    <color name="fab_color_primary">#EADDFF</color>
+
+    <color name="shadow_color">#CABBBBBB</color>
+
+
 
 
 

@@ -7,7 +7,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="365dp"
-        android:layout_height="95dp"
+        android:layout_height="150dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="6dp"
@@ -16,9 +16,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
         <ImageView
-            android:id="@+id/imageProizvodjaci"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:id="@+id/imagePrinter"
+            android:layout_width="113dp"
+            android:layout_height="118dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="7dp"
             android:layout_marginBottom="8dp"
@@ -27,7 +27,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textProizvodjac"
+            android:id="@+id/textPrinter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="28dp"
@@ -36,10 +36,25 @@
             android:fontFamily="@font/actor"
             android:text="DEFAULT TEKST"
             android:textColor="@color/text_color"
-            android:textSize="32sp"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="98dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="122dp"
+            android:layout_marginTop="38dp"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/rounded_layout_65558f_color"
+            android:fontFamily="@font/roboto"
+            android:text="@string/odaberi_btn"
+            android:textColor="@color/printMateWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imagePrinter"
+            app:layout_constraintTop_toBottomOf="@+id/textPrinter" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

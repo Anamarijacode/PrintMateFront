@@ -6,7 +6,6 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -17,20 +16,36 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PrintMate"
         tools:targetApi="31">
-
-        <activity android:name=".Activity.PrinterActivity" android:exported="false" />
-        <activity android:name=".Activity.ProizvodaciActivity" android:exported="false" />
-        <activity android:name=".Activity.LanguageActivity" android:exported="false" />
-        <activity android:name=".Activity.MainActivity" android:exported="false" />
-        <activity android:name=".Activity.RegisterActivity" android:exported="false" />
-        <activity android:name=".Activity.LoginActivity" android:exported="false" />
-
-        <!-- Ovo je nova početna aktivnost -->
+        <activity
+            android:name=".Activity.PostavljanjeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.SpecifikacijePrinteraActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.PrinterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.ProizvodaciActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.LanguageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.LoginActivity"
+            android:exported="false" /> <!-- Ovo je nova početna aktivnost -->
         <activity
             android:name=".Activity.LaunchActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

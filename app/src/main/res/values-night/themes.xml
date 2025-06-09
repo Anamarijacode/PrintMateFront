@@ -15,14 +15,23 @@
     </style>
     <color name="background_color_primary">#2F2250</color>
     <color name="background_color_secondary">#65558F</color>
+    <color name="background_color_primary_variant">#2F2250</color>
     <!--Gumbi-->
     <color name="button_color_primary">#2A1958</color>
     <color name="button_color_secondary">#65558F</color>
 
     <!--Inputi-->
     <color name="input_primary">#65558F</color>
+    <color name="input">#65558F</color>
+    <color name="input_secondary">#3A2B61</color>
 
     <!--Text-->
     <color name="text_color_primary">#F5F5F5</color>
-    <color name="background_color_primary_variant">#2F2250</color>
+    <color name="text_color_primary_variant">#F5F5F5</color>
+
+
+    <color name="fab_color_primary">#EADDFF</color>
+
+    <color name="shadow_color">#CA181818</color>
+
 </resources>

@@ -20,6 +20,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
+import com.printmate.PrintMate.Fragmenti.DetaljiFragment;
 import com.printmate.PrintMate.Klijenti.ApiClient;
 import com.printmate.PrintMate.Klijenti.AuthApi;
 import com.printmate.PrintMate.Modeli.AuthResponse;
@@ -50,10 +51,14 @@ public class LoginActivity extends AppCompatActivity {
 
         etEmail = findViewById(R.id.etemail);
         etLozinka = findViewById(R.id.etlozinka);
-        findViewById(R.id.btnPrijavise).setOnClickListener(v -> attemptLogin());
+        findViewById(R.id.btnPrijavise).setOnClickListener(v ->
+        {
+            Intent intent = new Intent(LoginActivity.this, PostavljanjeActivity.class);
+            startActivity(intent);
+        });
 
         // Google-gumb (koristi ID "constraintLayout" kao u XML-u)
-        findViewById(R.id.constraintLayout).setOnClickListener(v -> startGoogleSignIn());
+        //findViewById(R.id.constraintLayout).setOnClickListener(v -> startGoogleSignIn());
 
         // Link na registraciju
         findViewById(R.id.tvLinkRegistracija).setOnClickListener(v -> {

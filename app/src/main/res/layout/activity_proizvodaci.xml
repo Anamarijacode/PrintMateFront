@@ -10,23 +10,24 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayoutBroj"
+        android:id="@+id/constraintLayoutProizvodjac"
         android:layout_width="344dp"
         android:layout_height="42dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="35dp"
         android:layout_marginBottom="30dp"
         android:background="@drawable/rounded_search_bar"
         android:clickable="true"
         android:focusable="true"
         android:paddingStart="8dp"
         android:paddingEnd="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerViewProizvodjac"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnPrijavise">
+        app:layout_constraintTop_toBottomOf="@+id/todaberiteProizvodjac">
 
 
         <ImageView
-            android:id="@+id/filterSpinner"
+            android:id="@+id/filterSpinnerProizvodjac"
             android:layout_width="41dp"
             android:layout_height="34dp"
             android:layout_gravity="center_vertical"
@@ -35,37 +36,36 @@
             android:layout_marginEnd="10dp"
             android:padding="4dp"
             android:src="@drawable/baseline_dehaze_24"
-            app:layout_constraintEnd_toStartOf="@+id/separator"
+            app:layout_constraintEnd_toStartOf="@+id/separatorProizvodjac"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/separator"
+            android:id="@+id/separatorProizvodjac"
             android:layout_width="1dp"
             android:layout_height="42dp"
             android:layout_marginStart="3dp"
             android:layout_marginEnd="5dp"
             android:background="@color/background_color_primary_variant"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/searchView"
-            app:layout_constraintStart_toEndOf="@+id/filterSpinner"
+            app:layout_constraintEnd_toStartOf="@+id/searchViewProizvodjac"
+            app:layout_constraintStart_toEndOf="@+id/filterSpinnerProizvodjac"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
         <androidx.appcompat.widget.SearchView
-            android:id="@+id/searchView"
+            android:id="@+id/searchViewProizvodjac"
             android:layout_width="208dp"
             android:layout_height="38dp"
             android:layout_marginStart="5dp"
             android:layout_marginTop="2dp"
             android:layout_marginEnd="54dp"
             android:layout_marginBottom="2dp"
-            android:iconifiedByDefault="false"
-            android:queryHint="Unesite naziv proizvođača"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/separator"
+            app:layout_constraintStart_toEndOf="@+id/separatorProizvodjac"
             app:layout_constraintTop_toTopOf="parent" />
+
         <!--search.setQueryHint("Custom Search Hint");
         SearchView searchView = findViewById(R.id.searchView);
         ImageView searchIcon = searchView.findViewById(androidx.appcompat.R.id.search_mag_icon);
@@ -83,59 +83,53 @@ searchText.setHintTextColor(ContextCompat.getColor(this, R.color.tvoja_boja));
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
-        android:id="@+id/todaberiteJezik"
+        android:id="@+id/todaberiteProizvodjac"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="66dp"
-        android:fontFamily="@font/roboto_bold"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/roboto_medium"
         android:text="@string/odaberite_proizvodaca"
-        android:textColor="@color/text_color_primary"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/btnPrijavise"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/text_color_primary_variant"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/fabProizvodjac"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnPrijavise"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="38dp"
-        android:layout_marginBottom="25dp"
-        android:background="@drawable/rounded_button"
-        android:backgroundTint="@color/button_color_primary_varian"
-        android:fontFamily="@font/poppins"
-        android:paddingTop="5dp"
-        android:text="@string/preskoci_btn"
-        android:textAllCaps="false"
-        android:textColor="@color/text_color"
-        android:textSize="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutBroj"
-        app:layout_constraintStart_toEndOf="@+id/todaberiteJezik"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/recyclerViewProizvodjac"
         android:layout_width="419dp"
         android:layout_height="535dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintBottom_toTopOf="@+id/imageViewProizvodjac"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageViewProizvodjac"
         android:layout_width="241dp"
         android:layout_height="61dp"
         android:layout_marginStart="84dp"
         android:layout_marginEnd="86dp"
         android:layout_marginBottom="4dp"
-        android:src="@drawable/logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabProizvodjac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="11dp"
+        android:background="@color/fab_color_primary"
+        android:backgroundTint="@color/fab_color_primary"
+        android:src="@drawable/f2250_arrow"
+        app:borderWidth="0dp"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutProizvodjac"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
