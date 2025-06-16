@@ -51,7 +51,9 @@ public class HomeActivity extends AppCompatActivity {
         });
 
 
-
+if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
 
         initNavHost();
         setUpBottomNavigation();
