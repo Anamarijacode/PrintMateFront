@@ -53,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
         etLozinka = findViewById(R.id.etlozinka);
         findViewById(R.id.btnPrijavise).setOnClickListener(v ->
         {
-            Intent intent = new Intent(LoginActivity.this, PostavljanjeActivity.class);
+            Intent intent = new Intent(LoginActivity.this, ProizvodaciActivity.class);
             startActivity(intent);
         });
 

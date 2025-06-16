@@ -14,7 +14,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="26dp"
         android:layout_marginBottom="10dp"
-        android:background="@drawable/rounded_layout_65558f_color"
+        android:background="@drawable/rounden_layout_naslov"
         app:layout_constraintBottom_toTopOf="@+id/containerLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,7 +29,7 @@
             android:fontFamily="@font/actor"
             android:gravity="center"
             android:text="DEFAULT"
-            android:textColor="@color/text_color_secondary"
+            android:textColor="@color/text_color_primary"
             android:textSize="24dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -39,52 +39,71 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/containerLayout"
-        android:layout_width="370dp"
-        android:layout_height="520dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="376dp"
+        android:layout_height="585dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="14dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/rounded_layout_description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="346dp"
+            android:layout_height="339dp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <ImageView
+            android:id="@+id/slikaAkoIma"
+            android:layout_width="336dp"
+            android:layout_height="190dp"
+            tools:layout_editor_absoluteX="22dp"
+            tools:layout_editor_absoluteY="369dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonfoword"
-        android:layout_width="145dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="38dp"
-        android:background="@drawable/rounded_layout_65558f_color"
+        android:layout_width="130dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_button_6558f_color"
         android:drawableRight="@drawable/arrow_forword"
+        android:fontFamily="@font/actor"
         android:paddingEnd="10dp"
         android:text="@string/nastvi_btn"
+        android:textAllCaps="false"
+        android:textColor="@color/printMateWhite"
+        android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/buttonback"
-        app:layout_constraintTop_toBottomOf="@+id/containerLayout"
-        android:textColor="@color/printMateWhite"
-        android:fontFamily="@font/actor"
-        android:textSize="16dp"/>
+        app:layout_constraintTop_toBottomOf="@+id/containerLayout" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonback"
-        android:layout_width="145dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginBottom="38dp"
-        android:background="@drawable/rounded_layout_65558f_color"
-        android:text="@string/vrati_se"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/containerLayout"
+        android:layout_width="130dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="93dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_button_6558f_color"
         android:drawableLeft="@drawable/arrow_back"
-        android:paddingStart="10dp"
-        android:textColor="@color/printMateWhite"
         android:fontFamily="@font/actor"
-        android:textSize="16dp"/>
+        android:paddingStart="10dp"
+        android:text="@string/vrati_se"
+        android:textAllCaps="false"
+        android:textColor="@color/printMateWhite"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonfoword"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/containerLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

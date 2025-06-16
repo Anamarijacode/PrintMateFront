@@ -5,6 +5,83 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.OdabirActicity">
+    tools:context=".Activity.OdabirActicity"
+    android:background="@color/background_color_primary_variant">
+
+    <ImageView
+        android:id="@+id/logoOdabir"
+        android:layout_width="352dp"
+        android:layout_height="118dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnPostavljen"
+        android:layout_width="352dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/rounded_button_6558f_color"
+        android:fontFamily="@font/actor"
+        android:text="@string/postavljen_octoprint"
+        android:textAllCaps="false"
+        android:textColor="@color/printMateWhite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoOdabir" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnWindows"
+        android:layout_width="352dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/rounded_button_6558f_color"
+        android:fontFamily="@font/actor"
+        android:text="@string/zelim_postviti_octo_windows"
+        android:textAllCaps="false"
+        android:textColor="@color/printMateWhite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPostavljen" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnAndroid"
+        android:layout_width="352dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="41dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/rounded_button_6558f_color"
+        android:fontFamily="@font/actor"
+        android:text="@string/zelim_postviti_octo_android"
+        android:textAllCaps="false"
+        android:textColor="@color/printMateWhite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnWindows" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnRaPi"
+        android:layout_width="352dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="209dp"
+        android:background="@drawable/rounded_button_6558f_color"
+        android:fontFamily="@font/actor"
+        android:text="@string/zelim_postviti_octo_raspbery"
+        android:textAllCaps="false"
+        android:textColor="@color/printMateWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

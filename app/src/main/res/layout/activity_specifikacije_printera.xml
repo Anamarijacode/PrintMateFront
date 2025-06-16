@@ -12,9 +12,9 @@
         android:id="@+id/fabPrinter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginEnd="23dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="13dp"
         android:background="@color/fab_color_primary"
         android:backgroundTint="@color/fab_color_primary"
         android:src="@drawable/f2250_arrow"
@@ -56,13 +56,15 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
 
+        android:id="@+id/constraintLayout4"
         android:layout_width="362dp"
         android:layout_height="525dp"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="41dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="25dp"
         android:background="@drawable/rounded_layout_description"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fabPrinter">
 
@@ -112,13 +114,16 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
-        android:layout_width="217dp"
-        android:layout_height="59dp"
+        android:id="@+id/zaPromjenu"
+        android:layout_width="186dp"
+        android:layout_height="46dp"
         android:layout_marginStart="97dp"
+        android:layout_marginTop="9dp"
         android:layout_marginEnd="98dp"
         android:layout_marginBottom="36dp"
-        android:src="@drawable/logoandiconviolet"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,9 +13,12 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
     <color name="background_color_primary">#2F2250</color>
     <color name="background_color_secondary">#65558F</color>
     <color name="background_color_primary_variant">#2F2250</color>
+    <color name="home_backgroun">#65558F</color>
+    <color name="nav_item">#2A1958</color>
     <!--Gumbi-->
     <color name="button_color_primary">#2A1958</color>
     <color name="button_color_secondary">#65558F</color>
@@ -33,5 +36,6 @@
     <color name="fab_color_primary">#EADDFF</color>
 
     <color name="shadow_color">#CA181818</color>
+    <!-- Base application theme. -->
 
 </resources>

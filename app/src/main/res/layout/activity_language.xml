@@ -51,7 +51,7 @@
         app:layout_constraintTop_toBottomOf="@+id/todaberiteJezik" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnPrijavise"
+        android:id="@+id/btnZapocnimo"
         android:layout_width="322dp"
         android:layout_height="40dp"
         android:layout_marginStart="44dp"

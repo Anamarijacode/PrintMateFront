@@ -16,6 +16,8 @@
     <!--Pozadine-->
     <color name="background_color_primary">#65558F</color>
     <color name="background_color_secondary">#F5F5F5</color>
+    <color name="home_backgroun">#F5F5F5</color>
+    <color name="nav_item">#D1BFFF</color>
     <!--Gumbi-->
     <color name="button_color_primary">#65558F</color>
     <color name="button_color_secondary">#EADDFF</color>
@@ -37,9 +39,7 @@
     <color name="fab_color_primary">#EADDFF</color>
 
     <color name="shadow_color">#CABBBBBB</color>
-
-
-
+    <!-- Base application theme. -->
 
 
 </resources>

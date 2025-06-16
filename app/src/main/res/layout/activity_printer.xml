@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.PrinterActivity">
+    tools:context=".Activity.PrinterActivity"
+    android:background="@color/background_color_primary_variant">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,8 +14,7 @@
         android:layout_width="344dp"
         android:layout_height="42dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/rounded_search_bar"
         android:clickable="true"
         android:focusable="true"
@@ -100,7 +100,8 @@ searchText.setHintTextColor(ContextCompat.getColor(this, R.color.tvoja_boja));
         android:layout_height="535dp"
         app:layout_constraintBottom_toTopOf="@+id/imageViewPrinter"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutPrinter" />
 
     <ImageView
         android:id="@+id/imageViewPrinter"

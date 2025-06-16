@@ -1,5 +1,6 @@
 package com.printmate.PrintMate.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -25,5 +26,9 @@ public class LanguageActivity extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
+        findViewById(R.id.btnZapocnimo).setOnClickListener(v -> {
+            Intent intent = new Intent(LanguageActivity.this, LoginActivity.class);
+            startActivity(intent);
+        });
     }
 }
