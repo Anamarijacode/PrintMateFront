@@ -7,11 +7,14 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Patterns;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -30,57 +33,103 @@ import com.printmate.PrintMate.Modeli.GoogleLoginRequest;
 import com.printmate.PrintMate.Modeli.RegisterRequest;
 import com.printmate.PrintMate.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class RegisterActivity extends AppCompatActivity {
+    private static final String TAG = "RegisterActivity";
+
     private EditText etEmail, etLozinka, etLozinkaPonovna;
     private EditText etIme, etPrezime;
-    private Spinner spinnerGender;
+    private Spinner  spinnerGender;
     private EditText etDateOfBirth;
 
-    // Za Google Sign-In
-    private static final int RC_SIGN_IN = 9002;
     private GoogleSignInClient mGoogleSignInClient;
+    private ActivityResultLauncher<Intent> googleSignInLauncher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_register);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
+
+        // 1) If already logged in, skip straight to Home
+        SharedPreferences prefs = getSharedPreferences("auth", Context.MODE_PRIVATE);
+        String existingToken = prefs.getString("jwt_token", null);
+        if (existingToken != null && !existingToken.isEmpty()) {
+            startActivity(new Intent(this, HomeActivity.class));
+            finish();
+            return;
         }
 
-        // Inicijaliziraj View komponente
-        etEmail            = findViewById(R.id.etemailRegistrirajSe);
-        etLozinka          = findViewById(R.id.etlozinkaRegistrirajSe);
-        etLozinkaPonovna   = findViewById(R.id.etlozinkaRegistrirajSePonovna);
-        etIme              = findViewById(R.id.etImeRegistracija);
-        etPrezime          = findViewById(R.id.etPrezimeRegistracija);
-        // Gumb “Registriraj se”
-        findViewById(R.id.btnRegistrirajSe).setOnClickListener(v -> attemptRegister());
+        setContentView(R.layout.activity_register);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+            Insets sys = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(sys.left, sys.top, sys.right, sys.bottom);
+            return insets;
+        });
+        if (getSupportActionBar() != null) getSupportActionBar().hide();
 
-        // Gumb “Registriraj se s Google”
-        findViewById(R.id.constraintLayoutRegistrirajSe).setOnClickListener(v -> startGoogleSignIn());
+        // 2) Initialize views
+        etEmail          = findViewById(R.id.etemailRegistrirajSe);
+        etLozinka        = findViewById(R.id.etlozinkaRegistrirajSe);
+        etLozinkaPonovna = findViewById(R.id.etlozinkaRegistrirajSePonovna);
+        etIme            = findViewById(R.id.etImeRegistracija);
+        etPrezime        = findViewById(R.id.etPrezimeRegistracija);
+
+
+
+        // 3) Register button
+        findViewById(R.id.btnRegistrirajSe)
+                .setOnClickListener(v -> attemptRegister());
+
+        // 4) Google Sign‐In button
+        findViewById(R.id.constraintLayoutRegistrirajSe)
+                .setOnClickListener(v -> startGoogleSignIn());
+
+        googleSignInLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == RESULT_OK && result.getData() != null) {
+                        Task<GoogleSignInAccount> task =
+                                GoogleSignIn.getSignedInAccountFromIntent(result.getData());
+                        try {
+                            GoogleSignInAccount account = task.getResult(ApiException.class);
+                            String idToken = account.getIdToken();
+                            if (idToken != null) {
+                                sendGoogleTokenToBackend(idToken, account);
+                            } else {
+                                Toast.makeText(this,
+                                        "Nema ID tokena od Google-a.",
+                                        Toast.LENGTH_LONG).show();
+                            }
+                        } catch (ApiException e) {
+                            Log.e(TAG,
+                                    "Google registracija/prijava neuspjela: " + e.getStatusCode(),
+                                    e);
+                            Toast.makeText(this,
+                                    "Google prijava nije uspjela: " + e.getStatusCode(),
+                                    Toast.LENGTH_LONG).show();
+                        }
+                    } else {
+                        Toast.makeText(this,
+                                "Google prijava otkazana.",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                }
+        );
     }
 
-    // ----- 1. KORAK: Standardna registracija (email + lozinka + ostalo) -----
     private void attemptRegister() {
-        String email     = etEmail.getText().toString().trim();
-        String password  = etLozinka.getText().toString().trim();
-        String password2 = etLozinkaPonovna.getText().toString().trim();
-        String firstName = etIme.getText().toString().trim();
-        String lastName  = etPrezime.getText().toString().trim();
-     
-
-        // Validacija
+        String email      = etEmail.getText().toString().trim();
+        String password   = etLozinka.getText().toString().trim();
+        String password2  = etLozinkaPonovna.getText().toString().trim();
+        String firstName  = etIme.getText().toString().trim();
+        String lastName   = etPrezime.getText().toString().trim();
+        // Validation
         if (email.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             etEmail.setError("Unesite valjani email.");
             etEmail.requestFocus();
@@ -106,29 +155,30 @@ public class RegisterActivity extends AppCompatActivity {
             etPrezime.requestFocus();
             return;
         }
-       
-        // TODO: Dodati provjeru formata datuma ako treba, ili koristiti DatePicker
 
-        // Sastavi DTO za registraciju
-        RegisterRequest request = new RegisterRequest();
-        request.email       = email;
-        request.password    = password;
-        request.firstName   = firstName;
-        request.lastName    = lastName;
 
-        AuthApi authApi = ApiClient.getAuthApi();
-        Call<AuthResponse> call = authApi.register(request);
-        call.enqueue(new Callback<AuthResponse>() {
+        // Build register request
+        RegisterRequest req = new RegisterRequest();
+        req.email     = email;
+        req.password  = password;
+        req.firstName = firstName;
+        req.lastName  = lastName;
+        // If your API supports gender and DOB, add:
+        // req.gender = gender;
+        // req.dateOfBirth = dateOfBirth;
+
+        AuthApi api = ApiClient.getAuthApi();
+        api.register(req).enqueue(new Callback<AuthResponse>() {
             @Override
-            public void onResponse(Call<AuthResponse> call, Response<AuthResponse> response) {
+            public void onResponse(
+                    Call<AuthResponse> call,
+                    Response<AuthResponse> response
+            ) {
                 if (response.isSuccessful() && response.body() != null) {
-                    String token = response.body().token;
-                    saveTokenToPrefs(token);
-
-                    Toast.makeText(RegisterActivity.this, "Registracija uspješna!", Toast.LENGTH_SHORT).show();
-                    // Nakon registracije, nastavi na glavni
-                    Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
-                    startActivity(intent);
+                    String jwt = response.body().token;
+                    Log.d(TAG, "Registracija uspješna. Token=" + jwt);
+                    saveAuthToPrefs(jwt, email, firstName + " " + lastName);
+                    startActivity(new Intent(RegisterActivity.this, HomeActivity.class));
                     finish();
                 } else {
                     Toast.makeText(RegisterActivity.this,
@@ -146,74 +196,59 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
-    private void saveTokenToPrefs(String token) {
-        SharedPreferences prefs = getSharedPreferences("auth", Context.MODE_PRIVATE);
-        prefs.edit().putString("jwt_token", token).apply();
-    }
-
-    // ----- 2. KORAK: Google Sign-In registracija/prijava -----
     private void startGoogleSignIn() {
-        // Konfiguriraj GoogleSignInOptions: zatraži ID token
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(
+                GoogleSignInOptions.DEFAULT_SIGN_IN
+        )
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-        startActivityForResult(signInIntent, RC_SIGN_IN);
+        googleSignInLauncher.launch(mGoogleSignInClient.getSignInIntent());
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+    private void sendGoogleTokenToBackend(String idToken, GoogleSignInAccount account) {
+        GoogleLoginRequest req = new GoogleLoginRequest();
+        req.idToken = idToken;
 
-        if (requestCode == RC_SIGN_IN) {
-            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-            try {
-                GoogleSignInAccount account = task.getResult(ApiException.class);
-                String idToken = account.getIdToken();
-                if (idToken != null) {
-                    // Pošalji ID token na backend (isti endpoint kao za login)
-                    sendIdTokenToBackend(idToken);
-                } else {
-                    Toast.makeText(this, "Nismo dobili ID token od Googlea.", Toast.LENGTH_LONG).show();
-                }
-            } catch (ApiException e) {
-                Toast.makeText(this, "Google prijava neuspješna: " + e.getStatusCode(), Toast.LENGTH_LONG).show();
-            }
-        }
-    }
-
-    private void sendIdTokenToBackend(String idToken) {
-        Log.d("GoogleLoginFlow", "Počinjem slanje ID tokena na backend: " +
-                idToken.substring(0, Math.min(idToken.length(), 10)) + "…");
-
-        GoogleLoginRequest request = new GoogleLoginRequest();
-        request.idToken = idToken;
-
-        AuthApi authApi = ApiClient.getAuthApi();
-        Call<AuthResponse> call = authApi.googleLogin(request);
-        call.enqueue(new Callback<AuthResponse>() {
+        AuthApi api = ApiClient.getAuthApi();
+        api.googleLogin(req).enqueue(new Callback<AuthResponse>() {
             @Override
-            public void onResponse(Call<AuthResponse> call, Response<AuthResponse> response) {
+            public void onResponse(
+                    Call<AuthResponse> call,
+                    Response<AuthResponse> response
+            ) {
                 if (response.isSuccessful() && response.body() != null) {
-                    Log.d("GoogleLoginFlow", "Google prijava uspješna, dobiven JWT.");
-                    saveTokenToPrefs(response.body().token);
-                    Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
-                    startActivity(intent);
+                    String jwt = response.body().token;
+                    Log.d(TAG, "Google registracija/prijava uspješna. Token=" + jwt);
+                    saveAuthToPrefs(jwt,
+                            account.getEmail(),
+                            account.getDisplayName());
+                    startActivity(new Intent(RegisterActivity.this, HomeActivity.class));
                     finish();
                 } else {
-                    Log.d("GoogleLoginFlow", "Google prijava nije odobrena od servera. Kod: " + response.code());
-                    Toast.makeText(RegisterActivity.this, "Google prijava odbijena.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(RegisterActivity.this,
+                            "Google prijava odbijena od strane servera.",
+                            Toast.LENGTH_LONG).show();
                 }
             }
 
             @Override
             public void onFailure(Call<AuthResponse> call, Throwable t) {
-                Log.d("GoogleLoginFlow", "Greška pri Google loginu: " + t.getMessage());
-                Toast.makeText(RegisterActivity.this, "Greška pri Google loginu: " + t.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(RegisterActivity.this,
+                        "Greška pri Google loginu: " + t.getMessage(),
+                        Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    private void saveAuthToPrefs(String token, String email, String fullName) {
+        SharedPreferences prefs = getSharedPreferences("auth", Context.MODE_PRIVATE);
+        prefs.edit()
+                .putString("jwt_token",  token)
+                .putString("user_email", email)
+                .putString("user_name",  fullName)
+                .apply();
     }
 }

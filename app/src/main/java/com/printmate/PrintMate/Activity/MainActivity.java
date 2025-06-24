@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main); // pretpostavljamo da layout već postoji
 
-        printer = new OctoPrintController();
+        /*printer = new OctoPrintController();
 
         Button startButton = findViewById(R.id.btnStart);
         Button pauseButton = findViewById(R.id.btnPause);
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         startButton.setOnClickListener(v -> printer.startPrint(callback("Start")));
         pauseButton.setOnClickListener(v -> printer.pausePrint(callback("Pause")));
         resumeButton.setOnClickListener(v -> printer.resumePrint(callback("Resume")));
-        cancelButton.setOnClickListener(v -> printer.cancelPrint(callback("Cancel")));
+        cancelButton.setOnClickListener(v -> printer.cancelPrint(callback("Cancel")));*/
     }
 
     private Callback callback(String actionName) {

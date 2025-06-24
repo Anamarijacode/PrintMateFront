@@ -1,19 +1,39 @@
+/* Proizvodjac.java */
 package com.printmate.PrintMate.Modeli;
 
-public class Proizvodjac {
-    private String naziv;
-    private int slikaResId;
+import android.graphics.Bitmap;
+import com.google.gson.annotations.SerializedName;
 
-    public Proizvodjac(String naziv, int slikaResId) {
-        this.naziv = naziv;
-        this.slikaResId = slikaResId;
+public class Proizvodjac {
+    @SerializedName("idProizvodjaca")
+    private int id;
+
+    @SerializedName("naziv")
+    private String naziv;
+
+    @SerializedName("logo")
+    private String logoBase64;
+
+    // Prijeko potrebno: privremeno polje za dekodirani logo
+    private Bitmap logoBitmap;
+
+    public int getId() {
+        return id;
     }
 
     public String getNaziv() {
         return naziv;
     }
 
-    public int getSlikaResId() {
-        return slikaResId;
+    public String getLogoBase64() {
+        return logoBase64;
+    }
+
+    public Bitmap getLogoBitmap() {
+        return logoBitmap;
+    }
+
+    public void setLogoBitmap(Bitmap logoBitmap) {
+        this.logoBitmap = logoBitmap;
     }
 }

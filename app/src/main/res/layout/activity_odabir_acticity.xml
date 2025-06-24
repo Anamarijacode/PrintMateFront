@@ -17,7 +17,8 @@
         android:layout_marginEnd="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="?android:logo"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnPostavljen"
@@ -40,7 +41,7 @@
         android:layout_width="352dp"
         android:layout_height="42dp"
         android:layout_marginStart="29dp"
-        android:layout_marginTop="34dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="30dp"
         android:background="@drawable/rounded_button_6558f_color"
         android:fontFamily="@font/actor"
@@ -48,6 +49,7 @@
         android:textAllCaps="false"
         android:textColor="@color/printMateWhite"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnPostavljen" />
 
@@ -72,8 +74,9 @@
         android:layout_width="352dp"
         android:layout_height="42dp"
         android:layout_marginStart="29dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="30dp"
-        android:layout_marginBottom="209dp"
+        android:layout_marginBottom="368dp"
         android:background="@drawable/rounded_button_6558f_color"
         android:fontFamily="@font/actor"
         android:text="@string/zelim_postviti_octo_raspbery"
@@ -81,7 +84,17 @@
         android:textColor="@color/printMateWhite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAndroid" />
+    <FrameLayout
+        android:id="@+id/fragment_container_odabir"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/btnRaPi"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

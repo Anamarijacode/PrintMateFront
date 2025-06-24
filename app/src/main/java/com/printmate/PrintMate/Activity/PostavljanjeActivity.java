@@ -12,7 +12,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.printmate.PrintMate.R;
 
 public class PostavljanjeActivity extends AppCompatActivity {
-    private DetaljiFragment  stepFragment;
+
     private AppCompatButton btnNastaviL;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,9 +22,7 @@ public class PostavljanjeActivity extends AppCompatActivity {
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            stepFragment = new DetaljiFragment();
-            getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, stepFragment)
-                    .commitNow();
+
             return insets;
         });
         if (getSupportActionBar() != null) {

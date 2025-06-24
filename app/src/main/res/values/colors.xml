@@ -8,4 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="printMateWhite">#F5F5F5</color>
+    <color name="printMatePurpule">#3B1D71</color>
+    <color name ="printMateDarkPurlupel">#341F69</color>
 </resources>

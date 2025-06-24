@@ -9,7 +9,7 @@ public class ApiClient {
     public static AuthApi getAuthApi() {
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
-                    .baseUrl("https://192.168.76.176:44311/") // Zamijeni s pravim IP-om ako testiraš lokalno
+                    .baseUrl("http://31.147.206.25:8082/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }

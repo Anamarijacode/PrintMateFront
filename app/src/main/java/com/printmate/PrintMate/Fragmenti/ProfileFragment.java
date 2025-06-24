@@ -1,66 +1,110 @@
 package com.printmate.PrintMate.Fragmenti;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.fragment.app.Fragment;
+
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.printmate.PrintMate.Activity.LoginActivity;
 import com.printmate.PrintMate.R;
+import com.google.android.material.button.MaterialButton;
+import androidx.appcompat.app.AlertDialog;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ProfileFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class ProfileFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public ProfileFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ProfileFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ProfileFragment newInstance(String param1, String param2) {
-        ProfileFragment fragment = new ProfileFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    private TextView tvAvatar;
+    private TextView tvName, tvEmail, tvPrintCount, tvMinutes, tvMaterial;
+    private AppCompatButton btnSettings, btnDeleteProfile, btnLogout;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_profile, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        // Init Views
+        tvAvatar       = view.findViewById(R.id.tvAvatar);
+        tvName         = view.findViewById(R.id.tvName);
+        tvEmail        = view.findViewById(R.id.tvEmail);
+        tvPrintCount   = view.findViewById(R.id.tvPrintCount);
+        tvMinutes      = view.findViewById(R.id.tvMinutes);
+        tvMaterial     = view.findViewById(R.id.tvMaterial);
+
+        btnSettings      = view.findViewById(R.id.btnSettings);
+        btnDeleteProfile = view.findViewById(R.id.btndelete);
+        btnLogout        = view.findViewById(R.id.btnLogout);
+
+        // Load user data (e.g., from SharedPreferences)
+        SharedPreferences prefs = requireActivity()
+                .getSharedPreferences("auth", Context.MODE_PRIVATE);
+        String fullName = prefs.getString("user_name", "Korisnik");
+        String email    = prefs.getString("user_email", "email@example.com");
+        String prints   = prefs.getString("print_count", "0");
+        String minutes  = prefs.getString("print_minutes", "0");
+        String material = prefs.getString("preferred_material", "PLA");
+
+        // Set data
+        tvName.setText(fullName);
+        tvEmail.setText(email);
+        tvPrintCount.setText(prints);
+        tvMinutes.setText(minutes + " m");
+        tvMaterial.setText(material);
+
+        // Set avatar initial (first letter of name)
+        if (!fullName.isEmpty()) {
+            String initial = fullName.substring(0, 1).toUpperCase();
+            tvAvatar.setText(initial);
+        }
+
+        // Settings button (no-op)
+        btnSettings.setOnClickListener(v ->
+                Toast.makeText(getContext(), "Settings klik (nije implementirano)", Toast.LENGTH_SHORT).show()
+        );
+
+        // Delete profile button (no-op)
+        btnDeleteProfile.setOnClickListener(v ->
+                Toast.makeText(getContext(), "Delete Profile klik (nije implementirano)", Toast.LENGTH_SHORT).show()
+        );
+
+        // Logout: clear prefs and back to login
+        btnLogout.setOnClickListener(v -> {
+            // 1. Clear your own tokens / user fields
+            prefs.edit().remove("jwt_token")
+                    .remove("user_email")
+                    .remove("user_name")
+                    .apply();
+
+            // 2. Also sign out from Google so the account picker re-appears
+            GoogleSignInClient googleClient = GoogleSignIn.getClient(
+                    requireContext(),
+                    new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                            .requestIdToken(getString(R.string.default_web_client_id))
+                            .requestEmail()
+                            .build()
+            );
+            googleClient.signOut();
+
+            // 3. And finally navigate home:
+            startActivity(new Intent(getActivity(), LoginActivity.class));
+            requireActivity().finish();
+        });
+
     }
 }

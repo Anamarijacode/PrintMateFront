@@ -1,6 +1,8 @@
+/* ProizvodjacAdapter.java */
 package com.printmate.PrintMate.Adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,8 +44,12 @@ public class ProizvodjacAdapter extends RecyclerView.Adapter<ProizvodjacAdapter.
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Proizvodjac p = proizvodjaci.get(position);
         holder.naziv.setText(p.getNaziv());
-        holder.slika.setImageResource(p.getSlikaResId());
-
+        Bitmap bmp = p.getLogoBitmap();
+        if (bmp != null) {
+            holder.slika.setImageBitmap(bmp);
+        } else {
+            holder.slika.setImageResource(R.drawable.ic_home);
+        }
         holder.itemView.setOnClickListener(v -> listener.onItemClick(p));
     }
 

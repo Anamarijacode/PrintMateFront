@@ -11,6 +11,7 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:logo">@drawable/logoandiconwhite</item>
         <!-- Customize your theme here. -->
     </style>
 
@@ -36,6 +37,13 @@
     <color name="fab_color_primary">#EADDFF</color>
 
     <color name="shadow_color">#CA181818</color>
+    <color name="icons">@color/printMateWhite</color>
+    <color name="text_upute">@color/printMateWhite</color>
     <!-- Base application theme. -->
+    <style name="Base.Theme.PrintMate" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    </style>
+
 
 </resources>

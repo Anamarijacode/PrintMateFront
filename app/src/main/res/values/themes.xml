@@ -11,6 +11,7 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:logo">@drawable/logoandiconviolet</item>
         <!-- Customize your theme here. -->
     </style>
     <!--Pozadine-->
@@ -18,6 +19,7 @@
     <color name="background_color_secondary">#F5F5F5</color>
     <color name="home_backgroun">#F5F5F5</color>
     <color name="nav_item">#D1BFFF</color>
+    <color name="nav_item_secondery">#D1BFFF</color>
     <!--Gumbi-->
     <color name="button_color_primary">#65558F</color>
     <color name="button_color_secondary">#EADDFF</color>
@@ -39,7 +41,15 @@
     <color name="fab_color_primary">#EADDFF</color>
 
     <color name="shadow_color">#CABBBBBB</color>
+
+
+    <color name="icons">@color/printMatePurpule</color>
+    <color name="text_upute">@android:color/black</color>
     <!-- Base application theme. -->
+    <style name="Base.Theme.PrintMate" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
 
 
 </resources>

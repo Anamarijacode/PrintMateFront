@@ -1,9 +1,11 @@
 package com.printmate.PrintMate.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -21,6 +23,21 @@ public class DetaljiAndroidActivity2 extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+        if (getSupportActionBar() != null) getSupportActionBar().hide();
+        // 1) “Back” button → HomeActivity
+        AppCompatButton backBtn = findViewById(R.id.buttonbackAndroid);
+        backBtn.setOnClickListener(v -> {
+            Intent home = new Intent(DetaljiAndroidActivity2.this, HomeActivity.class);
+            startActivity(home);
+            finish(); // optional, so this Detail screen is popped
+        });
+
+        // 2) “Forward” button → OdabirProizvođačaActivity
+        AppCompatButton forwardBtn = findViewById(R.id.buttonfowordAndroid);
+        forwardBtn.setOnClickListener(v -> {
+            Intent pickMaker = new Intent(DetaljiAndroidActivity2.this, ProizvodaciActivity.class);
+            startActivity(pickMaker);
         });
     }
 }

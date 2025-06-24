@@ -1,7 +1,7 @@
 package com.printmate.PrintMate.Adapter;
 
 import android.content.Context;
-import android.content.Intent;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,63 +12,65 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.printmate.PrintMate.Activity.PostavljanjeActivity;
-import com.printmate.PrintMate.Model.Printer;
+import com.printmate.PrintMate.Modeli.Printer;
 import com.printmate.PrintMate.R;
 
 import java.util.List;
 
-public class PrinterAdapter extends RecyclerView.Adapter<PrinterAdapter.PrinterViewHolder> {
+public class PrinterAdapter extends RecyclerView.Adapter<PrinterAdapter.VH> {
 
-    private Context context;
-    private List<Printer> printerList;
-
-    public PrinterAdapter(Context context, List<Printer> printerList) {
-        this.context = context;
-        this.printerList = printerList;
+    public interface OnSelectListener {
+        void onSelect(Printer printer);
     }
 
-    public void updateList(List<Printer> novaLista) {
-        this.printerList = novaLista;
-        notifyDataSetChanged();
+    private List<Printer> list;
+    private Context ctx;
+    private OnSelectListener listener;
+
+    public PrinterAdapter(Context ctx, List<Printer> list, OnSelectListener listener) {
+        this.ctx = ctx;
+        this.list = list;
+        this.listener = listener;
     }
 
-    @NonNull
+    @NonNull @Override
+    public VH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(ctx).inflate(R.layout.item_printer, parent, false);
+        return new VH(v);
+    }
+
     @Override
-    public PrinterViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_printer, parent, false);
-        return new PrinterViewHolder(view);
-    }
+    public void onBindViewHolder(@NonNull VH h, int pos) {
+        Printer p = list.get(pos);
 
-    @Override
-    public void onBindViewHolder(@NonNull PrinterViewHolder holder, int position) {
-        Printer printer = printerList.get(position);
-        holder.textPrinter.setText(printer.getNaziv());
-        holder.imagePrinter.setImageResource(printer.getSlikaResId());
+        // Stavljamo naziv i sliku
+        h.textNaziv.setText(p.getNaziv());
+        Bitmap bmp = p.getLogoBitmap();
+        if (bmp != null) {
+            h.imagePrinter.setImageBitmap(bmp);
+        } else {
+            h.imagePrinter.setImageResource(R.drawable.ic_home);
+        }
 
-        holder.btnPrinter.setOnClickListener(v -> {
-            Intent intent = new Intent(context, PostavljanjeActivity.class);
-            intent.putExtra("naziv", printer.getNaziv());
-            intent.putExtra("slika", printer.getSlikaResId());
-            context.startActivity(intent);
-        });
+        // Kad se klikne, vraćamo printer model u activity
+        h.btnOdaberi.setOnClickListener(v -> listener.onSelect(p));
     }
 
     @Override
     public int getItemCount() {
-        return printerList.size();
+        return list.size();
     }
 
-    public static class PrinterViewHolder extends RecyclerView.ViewHolder {
-        ImageView imagePrinter;
-        TextView textPrinter;
-        AppCompatButton btnPrinter;
+    static class VH extends RecyclerView.ViewHolder {
+        ImageView       imagePrinter;
+        TextView        textNaziv;
+        AppCompatButton btnOdaberi;
 
-        public PrinterViewHolder(@NonNull View itemView) {
+        VH(@NonNull View itemView) {
             super(itemView);
             imagePrinter = itemView.findViewById(R.id.imagePrinter);
-            textPrinter = itemView.findViewById(R.id.textPrinter);
-            btnPrinter = itemView.findViewById(R.id.buttonOdaberiPrinter);
+            textNaziv    = itemView.findViewById(R.id.textPrinter);
+            btnOdaberi   = itemView.findViewById(R.id.buttonOdaberiPrinter);
         }
     }
 }

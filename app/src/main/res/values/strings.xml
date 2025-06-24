@@ -40,6 +40,7 @@
         <item>@string/slovenski</item>
         <item>@string/madarski</item>
     </string-array>
+
     <string name="odaberite_proizvodaca">Select the manufacturer</string>
     <string name="preskoci_btn">Skip</string>
     <string name="proizvodaci_serch">Enter the name of the manufacturer</string>
@@ -50,10 +51,9 @@
     <string name="daljen_upute">Further instructions</string>
     <string name="vrati_se">Go back</string>
     <string name="nastvi_btn">Continue</string>
-    <string name="default_web_client_id">
+    <string name="default_web_client_id" translatable="false">
         468295654871-2bo041s15c8o6me3vl7j08cfl44324tr.apps.googleusercontent.com
     </string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="postavljen_octoprint">I already have octoprint set up!</string>
     <string name="zelim_postviti_octo_windows">I want to set up octoprint on windows!</string>
@@ -65,7 +65,7 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-    <string name="lorem_ipsum">
+    <string name="lorem_ipsum" translatable="false">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
         volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
         dui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu ad
@@ -106,6 +106,89 @@
     <string name="shared_connection">Shared connection</string>
     <string name="kako_p_api">How to find an API key?</string>
     <string name="kako_p_sh">How to get a shared connection link?</string>
+    <string name="settings">Settings</string>
+    <string name="printers">Printers</string>
+    <string name="log_out">Logout</string>
+    <string name="statistika_ispisa">Print statistics</string>
+    <string name="delete_profile">Delete profile</string>
+    <string name="broj_ispisa">Number of prints</string>
+    <string name="preferencija">Preferences</string>
+    <string name="dodaj_printer">Add printer</string>
+    <string name="naslov_RaspberryPi">Raspberry Pi (OctoPi) + OctoEverywhere</string>
+
+    <string name="podnaslov_a_raspberry">A) OctoPrint Installation (OctoPi)</string>
+    <string name="lista_podnaslovAA">
+• Download the OctoPi image from here.\n
+• Flash the image to a microSD card using Raspberry Pi Imager or Etcher.\n
+• Edit the octopi-wpa-supplicant.txt file on the SD card and enter your Wi-Fi credentials.\n
+• Insert the SD card into the Raspberry Pi, connect the printer, and power it on.\n
+• Find your Raspberry Pi on the network: http://octopi.local or by its IP address.
+</string>
+
+
+    <string name="podnaslov_b_raspberry">B) OctoEverywhere Installation</string>
+    <string name="lista_podnaslovBB">
+•&#160;&#160;Open OctoPrint in your browser.\n
+•&#160;&#160;Go to Settings &gt; Plugin Manager &gt; Get More\n
+•&#160;&#160;Search for “OctoEverywhere” and click Install.\n
+•&#160;&#160;Restart OctoPrint when prompted.\n
+•&#160;&#160;Go to Settings &gt; OctoEverywhere.\n
+•&#160;&#160;Click “Connect Printer”, then go to octoeverywhere.com, log in, and link your account.\n
+•&#160;&#160;Your printer is now available online via the OctoEverywhere portal.
+</string>
+
+
+    <string name="naslov_android">Android (Octo4a) + OctoEverywhere</string>
+
+    <string name="podnaslov_a_android">A) OctoPrint Installation via Octo4a</string>
+    <string name="lista_podnaslovAA_android">
+• Install the Octo4a app on your Android device (official GitHub page: https://github.com/feelfreelinux/octo4a).\n
+• Open Octo4a and follow the instructions to install OctoPrint.\n
+• Configure the necessary permissions and storage access for Octo4a.\n
+• Connect your 3D printer to the Android device via USB OTG.\n
+• Start OctoPrint from within the Octo4a app.\n
+• Once started, open OctoPrint in your browser (from the device: http://localhost:5000 or via device IP on the local network).\n
+• Go through the basic OctoPrint setup wizard.
+</string>
+
+
+    <string name="podnaslov_b_android">B) OctoEverywhere Installation</string>
+    <string name="lista_podnaslovBB_android">
+•&#160;&#160;Open OctoPrint in your browser.\n
+•&#160;&#160;Go to Settings &gt; Plugin Manager &gt; Get More\n
+•&#160;&#160;Search for “OctoEverywhere” and click Install.\n
+•&#160;&#160;Restart OctoPrint when prompted.\n
+•&#160;&#160;Go to Settings &gt; OctoEverywhere.\n
+•&#160;&#160;Click “Connect Printer”, then go to octoeverywhere.com, log in, and link your account.\n
+•&#160;&#160;Your printer is now available online via the OctoEverywhere portal.
+</string>
+
+
+    <string name="naslov_windows">Windows (local hosting) + OctoEverywhere</string>
+
+    <string name="podnaslov_a_windows">A) OctoPrint Installation on Windows</string>
+    <string name="lista_podnaslovAA_windows">
+• Install Python 3.7–3.10.<br />
+• Open Command Prompt and run:<br />\n
+&#160;&#160;&#160;&#160;python -m venv OctoPrint<br />\n
+&#160;&#160;&#160;&#160;OctoPrint\Scripts\activate<br />\n
+&#160;&#160;&#160;&#160;pip install octoprint<br />\n
+&#160;&#160;&#160;&#160;octoprint serve<br />\n
+• Open your browser and go to: http://localhost:5000<br />\n
+• Complete the initial OctoPrint setup.
+</string>
+
+
+    <string name="podnaslov_b_windows">B) OctoEverywhere Installation</string>
+    <string name="lista_podnaslovBB_windows">
+•&#160;&#160;Open OctoPrint in your browser.\n
+•&#160;&#160;Go to Settings &gt; Plugin Manager &gt; Get More\n
+•&#160;&#160;Search for “OctoEverywhere” and click Install.\n
+•&#160;&#160;Restart OctoPrint when prompted.\n
+•&#160;&#160;Go to Settings &gt; OctoEverywhere.\n
+•&#160;&#160;Click “Connect Printer”, then go to octoeverywhere.com, log in, and link your account.\n
+•&#160;&#160;Your printer is now available online via the OctoEverywhere portal.
+</string>
 
 
 </resources>

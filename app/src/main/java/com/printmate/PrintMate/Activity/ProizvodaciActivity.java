@@ -1,12 +1,16 @@
+/* ProizvodaciActivity.java */
 package com.printmate.PrintMate.Activity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.widget.SearchView;
+import android.util.Base64;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -14,14 +18,21 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.printmate.PrintMate.Adapter.ProizvodjacAdapter;
+import com.printmate.PrintMate.Klijenti.ApiClient;
+import com.printmate.PrintMate.Klijenti.AuthApi;
 import com.printmate.PrintMate.Modeli.Proizvodjac;
 import com.printmate.PrintMate.R;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class ProizvodaciActivity extends AppCompatActivity {
+    private ProizvodjacAdapter adapter;
+    private List<Proizvodjac> sviProizvodjaci = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,36 +44,27 @@ public class ProizvodaciActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
-        }
-        List<Proizvodjac> sviProizvodjaci = Arrays.asList(
-                new Proizvodjac("Creality", R.drawable.creality),
-                new Proizvodjac("ARTILLERY", R.drawable.artillery_logo),
-                new Proizvodjac("BALCO", R.drawable.balco_logo)
-        );
+        if (getSupportActionBar() != null) getSupportActionBar().hide();
+
         RecyclerView recyclerView = findViewById(R.id.recyclerViewProizvodjac);
-        androidx.appcompat.widget.SearchView searchView = findViewById(R.id.searchViewProizvodjac);
-        ProizvodjacAdapter adapter = new ProizvodjacAdapter(sviProizvodjaci, this, new ProizvodjacAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(Proizvodjac proizvodjac) {
-                Intent intent = new Intent(ProizvodaciActivity.this, PrinterActivity.class);
-                intent.putExtra("nazivProizvodjaca", proizvodjac.getNaziv());
-               ProizvodaciActivity.this.startActivity(intent);
+        SearchView searchView = findViewById(R.id.searchViewProizvodjac);
 
-            }
+        adapter = new ProizvodjacAdapter(sviProizvodjaci, this, proizvodjac -> {
+            Intent intent = new Intent(this, PrinterActivity.class);
+            intent.putExtra("idProizvodjaca", proizvodjac.getId());
+            intent.putExtra("nazivProizvodjaca", proizvodjac.getNaziv());
+            startActivity(intent);
         });
-
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
 
-// Filtar po početnom slovu
-        searchView.setOnQueryTextListener(new androidx.appcompat.widget.SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
-            }
+        setupSearch(searchView);
+        fetchProizvodjaciFromApi();
+    }
 
+    private void setupSearch(SearchView searchView) {
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override public boolean onQueryTextSubmit(String query) { return false; }
             @Override
             public boolean onQueryTextChange(String newText) {
                 List<Proizvodjac> filtrirani = new ArrayList<>();
@@ -75,6 +77,38 @@ public class ProizvodaciActivity extends AppCompatActivity {
                 return true;
             }
         });
+    }
 
+    private void fetchProizvodjaciFromApi() {
+        AuthApi api = ApiClient.getAuthApi();
+        Call<List<Proizvodjac>> call = api.getProizvodjaci();
+        call.enqueue(new Callback<List<Proizvodjac>>() {
+            @Override
+            public void onResponse(Call<List<Proizvodjac>> call, Response<List<Proizvodjac>> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    sviProizvodjaci.clear();
+                    for (Proizvodjac p : response.body()) {
+                        String base64 = p.getLogoBase64();
+                        Bitmap bmp = null;
+                        if (base64 != null && !base64.isEmpty()) {
+                            byte[] decoded = Base64.decode(base64, Base64.DEFAULT);
+                            bmp = BitmapFactory.decodeByteArray(decoded, 0, decoded.length);
+                        }
+                        p.setLogoBitmap(bmp);
+                        sviProizvodjaci.add(p);
+                    }
+                    adapter.notifyDataSetChanged();
+                } else {
+                    Toast.makeText(ProizvodaciActivity.this,
+                            "Greška pri dohvaćanju proizvođača", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Proizvodjac>> call, Throwable t) {
+                Toast.makeText(ProizvodaciActivity.this,
+                        "Network error: " + t.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }

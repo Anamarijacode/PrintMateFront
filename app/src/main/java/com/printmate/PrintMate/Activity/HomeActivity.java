@@ -39,7 +39,6 @@ public class HomeActivity extends AppCompatActivity {
         ViewCompat.setOnApplyWindowInsetsListener(curved, (v, insets) -> {
             Insets sys = insets.getInsets(WindowInsetsCompat.Type.systemBars());
 
-            // Postavi samo bottom padding, ostavi ostale netaknute
             v.setPadding(
                     v.getPaddingLeft(),
                     v.getPaddingTop(),
@@ -49,7 +48,7 @@ public class HomeActivity extends AppCompatActivity {
 
             return insets;
         });
-
+        if (getSupportActionBar() != null) getSupportActionBar().hide();
 
 if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
@@ -71,23 +70,19 @@ if (getSupportActionBar() != null) {
     }
 
     private void setUpBottomNavigation() {
-        // Priprema stavki
         List<CurvedBottomNavigation.Model> items = Arrays.asList(
-                new CurvedBottomNavigation.Model(HOME_ITEM,      "Početna",   R.drawable.ic_home),
-                new CurvedBottomNavigation.Model(MATERIALS_ITEM, "Materijali",R.drawable.ic_grid),
-                new CurvedBottomNavigation.Model(ARCHIVE_ITEM,   "Arhiva",    R.drawable.ic_archive),
-                new CurvedBottomNavigation.Model(PROFILE_ITEM,   "Profil",    R.drawable.ic_user)
+                new CurvedBottomNavigation.Model(HOME_ITEM,      "Početna",   R.drawable.ic_home_filled),
+                new CurvedBottomNavigation.Model(MATERIALS_ITEM, "Materijali",R.drawable.filament_filled),
+                new CurvedBottomNavigation.Model(ARCHIVE_ITEM,   "Arhiva",    R.drawable.ic_arhive),
+                new CurvedBottomNavigation.Model(PROFILE_ITEM,   "Profil",    R.drawable.ic_person)
         );
 
-        // Dohvat zakrivljene navigacije
         CurvedBottomNavigation bottomNav = findViewById(R.id.curvedNav);
 
-        // Dodavanje stavki
         for (CurvedBottomNavigation.Model m : items) {
             bottomNav.add(m);
         }
 
-        // Klik‐listener za navigaciju
         bottomNav.setOnClickMenuListener(new Function1<CurvedBottomNavigation.Model, Unit>() {
             @Override
             public Unit invoke(CurvedBottomNavigation.Model model) {
@@ -96,10 +91,8 @@ if (getSupportActionBar() != null) {
             }
         });
 
-        // Defaultni prikaz Početne (bez animacije)
         bottomNav.show(HOME_ITEM, false);
 
-        // Sinkronizacija s NavControllerom
         bottomNav.setupNavController(navController);
     }
 

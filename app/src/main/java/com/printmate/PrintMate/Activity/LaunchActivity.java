@@ -1,6 +1,8 @@
 package com.printmate.PrintMate.Activity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 
@@ -27,13 +29,21 @@ public class LaunchActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(LaunchActivity.this, LanguageActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        },3000);
+        SharedPreferences prefs = getSharedPreferences("auth", Context.MODE_PRIVATE);
+        String token = prefs.getString("jwt_token", null);
+
+        // If we have a token (and you might want to verify it's not expired),
+        // go straight to Home.  Otherwise on to LanguageActivity (or Login).
+        Class<?> nextActivity;
+        if (token != null && !token.isEmpty()) {
+            nextActivity = HomeActivity.class;
+        } else {
+            nextActivity = LanguageActivity.class;
+        }
+
+        new Handler().postDelayed(() -> {
+            startActivity(new Intent(this, nextActivity));
+            finish();
+        }, 1500);  // splash for 1.5s if you like
     }
 }

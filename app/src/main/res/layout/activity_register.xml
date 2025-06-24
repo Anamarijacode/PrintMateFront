@@ -5,15 +5,15 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.RegisterActivity"
-    android:background="@color/background_color_primary">
+    android:background="@color/background_color_primary"
+    tools:context=".Activity.RegisterActivity">
 
     <ImageView
         android:id="@+id/printMateLogoRegistrirajSe"
         android:layout_width="374dp"
         android:layout_height="118dp"
         android:layout_marginTop="16dp"
-        android:src="@drawable/logo"
+        android:src="@drawable/logoandiconwhite"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,9 +29,9 @@
         android:text="@string/email"
         android:textColor="@color/text_color_secondary"
         android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/etemailRegistrirajSe"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/printMateLogoRegistrirajSe"
-        app:layout_constraintBottom_toTopOf="@+id/etemailRegistrirajSe"/>
+        app:layout_constraintTop_toBottomOf="@+id/printMateLogoRegistrirajSe" />
 
     <EditText
         android:id="@+id/etemailRegistrirajSe"
@@ -122,20 +122,22 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="345dp"
         android:fontFamily="@font/poppins"
         android:text="@string/ime"
         android:textColor="@color/text_color_secondary"
         android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etlozinkaRegistrirajSePonovna" />
 
     <EditText
         android:id="@+id/etImeRegistracija"
-        android:layout_width="170dp"
+        android:layout_width="344dp"
         android:layout_height="42dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="22dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="51dp"
         android:background="@drawable/rounded_edittext"
         android:fontFamily="@font/poppins"
         android:hint="@string/unesite_ime"
@@ -143,123 +145,124 @@
         android:paddingTop="5dp"
         android:paddingEnd="24dp"
         android:textColor="@color/text_color_primary"
-        android:textSize="13dp"
-        app:layout_constraintEnd_toStartOf="@+id/etPrezimeRegistracija"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tImeRegistracija" />
+
+    <!--
+        <TextView
+            android:id="@+id/tBrojMobitela"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="269dp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/broj_mobitela"
+            android:textColor="@color/text_color_secondary"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etImeRegistracija" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutBroj"
+            android:layout_width="344dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="29dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/button_color_secondary"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tBrojMobitela">
+
+            <ImageView
+                android:id="@+id/iconeImageBroj"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Spinner
+                android:id="@+id/spinnerBrojMobitela"
+                android:layout_width="53dp"
+                android:layout_height="41dp"
+                android:layout_marginTop="2dp"
+                app:layout_constraintEnd_toStartOf="@id/separatorImageBroj"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@id/iconeImageBroj"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/separatorImageBroj"
+                android:layout_width="1dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="56dp"
+                android:background="@color/background_color_primary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iconeImageBroj"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/tPrijaviSeSaGooglomBroj"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:fontFamily="@font/poppins"
+                android:paddingStart="24dp"
+                android:paddingTop="5dp"
+                android:text="@string/unesite_broj_mobitela"
+                android:textColor="@color/text_color_primary"
+                android:textSize="13dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/separatorImageBroj"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    -->
 
     <TextView
         android:id="@+id/tPrezimeRegistracija"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="135dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="313dp"
         android:fontFamily="@font/poppins"
         android:text="@string/prezime"
         android:textColor="@color/text_color_secondary"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tImeRegistracija"
-        app:layout_constraintTop_toBottomOf="@+id/etlozinkaRegistrirajSePonovna" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="469dp" />
 
     <EditText
         android:id="@+id/etPrezimeRegistracija"
-        android:layout_width="170dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="26dp"
-        android:background="@drawable/rounded_edittext"
-        android:fontFamily="@font/poppins"
-        android:hint="@string/prezime_unos"
-        android:paddingStart="24dp"
-
-        android:paddingTop="5dp"
-        android:paddingEnd="24dp"
-        android:textColor="@color/text_color_primary"
-        android:textSize="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/etImeRegistracija"
-        app:layout_constraintTop_toBottomOf="@+id/tPrezimeRegistracija" />
-
-    <TextView
-        android:id="@+id/tBrojMobitela"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="269dp"
-        android:fontFamily="@font/poppins"
-        android:text="@string/broj_mobitela"
-        android:textColor="@color/text_color_secondary"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etImeRegistracija" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayoutBroj"
         android:layout_width="344dp"
         android:layout_height="42dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="29dp"
-        android:background="@drawable/rounded_button"
-        android:backgroundTint="@color/button_color_secondary"
-        android:clickable="true"
-        android:focusable="true"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="51dp"
+        android:background="@drawable/rounded_edittext"
+
+        android:fontFamily="@font/poppins"
+        android:hint="@string/prezime_unos"
+        android:paddingStart="24dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="24dp"
+        android:textColor="@color/text_color_primary"
+        android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tBrojMobitela">
-
-        <ImageView
-            android:id="@+id/iconeImageBroj"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Spinner
-            android:id="@+id/spinnerBrojMobitela"
-            android:layout_width="53dp"
-            android:layout_height="41dp"
-            android:layout_marginTop="2dp"
-            app:layout_constraintEnd_toStartOf="@id/separatorImageBroj"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@id/iconeImageBroj"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/separatorImageBroj"
-            android:layout_width="1dp"
-            android:layout_height="42dp"
-            android:layout_marginStart="56dp"
-            android:background="@color/background_color_primary"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/iconeImageBroj"
-
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <TextView
-            android:id="@+id/tPrijaviSeSaGooglomBroj"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="36dp"
-            android:fontFamily="@font/poppins"
-            android:paddingStart="24dp"
-            android:paddingTop="5dp"
-            android:text="@string/unesite_broj_mobitela"
-            android:textColor="@color/text_color_primary"
-            android:textSize="13dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/separatorImageBroj"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintTop_toBottomOf="@+id/tPrezimeRegistracija" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnRegistrirajSe"

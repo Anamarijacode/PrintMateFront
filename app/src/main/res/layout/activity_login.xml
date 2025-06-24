@@ -22,10 +22,11 @@
             android:layout_width="363dp"
             android:layout_height="176dp"
             android:layout_marginTop="48dp"
-            android:src="@drawable/logo"
+            android:src="@drawable/logoandiconwhite"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+           />
 
         <!-- ORIGINAL: Email label -->
         <TextView
