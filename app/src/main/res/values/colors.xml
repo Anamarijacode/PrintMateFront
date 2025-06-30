@@ -10,4 +10,8 @@
     <color name="printMateWhite">#F5F5F5</color>
     <color name="printMatePurpule">#3B1D71</color>
     <color name ="printMateDarkPurlupel">#341F69</color>
+    <color name="tool_line_color">#26A69A</color>
+    <color name="bed_line_color">#FFA726</color>
+
+
 </resources>

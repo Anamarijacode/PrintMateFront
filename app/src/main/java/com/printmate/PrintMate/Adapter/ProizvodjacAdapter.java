@@ -1,4 +1,4 @@
-/* ProizvodjacAdapter.java */
+// src/main/java/com/printmate/PrintMate/Adapter/ProizvodjacAdapter.java
 package com.printmate.PrintMate.Adapter;
 
 import android.content.Context;
@@ -20,8 +20,8 @@ import java.util.List;
 public class ProizvodjacAdapter extends RecyclerView.Adapter<ProizvodjacAdapter.ViewHolder> {
 
     private List<Proizvodjac> proizvodjaci;
-    private Context context;
-    private OnItemClickListener listener;
+    private final Context context;
+    private final OnItemClickListener listener;
 
     public interface OnItemClickListener {
         void onItemClick(Proizvodjac proizvodjac);
@@ -33,15 +33,13 @@ public class ProizvodjacAdapter extends RecyclerView.Adapter<ProizvodjacAdapter.
         this.listener = listener;
     }
 
-    @NonNull
-    @Override
+    @NonNull @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_proizvodac, parent, false);
-        return new ViewHolder(view);
+        View v = LayoutInflater.from(context).inflate(R.layout.item_proizvodac, parent, false);
+        return new ViewHolder(v);
     }
 
-    @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    @Override public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Proizvodjac p = proizvodjaci.get(position);
         holder.naziv.setText(p.getNaziv());
         Bitmap bmp = p.getLogoBitmap();
@@ -53,21 +51,20 @@ public class ProizvodjacAdapter extends RecyclerView.Adapter<ProizvodjacAdapter.
         holder.itemView.setOnClickListener(v -> listener.onItemClick(p));
     }
 
-    @Override
-    public int getItemCount() {
+    @Override public int getItemCount() {
         return proizvodjaci.size();
     }
 
-    public void filterList(List<Proizvodjac> filteredList) {
-        proizvodjaci = filteredList;
+    /** Za spinner filtriranje */
+    public void filterList(List<Proizvodjac> newList) {
+        proizvodjaci = newList;
         notifyDataSetChanged();
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         TextView naziv;
         ImageView slika;
-
-        public ViewHolder(@NonNull View itemView) {
+        ViewHolder(@NonNull View itemView) {
             super(itemView);
             naziv = itemView.findViewById(R.id.textProizvodjac);
             slika = itemView.findViewById(R.id.imageProizvodjaci);

@@ -12,12 +12,12 @@
         android:label="Početna"
         tools:layout="@layout/fragment_home" />
 
-    <!-- Dodaj ostale destinacije -->
+ <!--
     <fragment
         android:id="@+id/materialsFragment"
         android:name="com.printmate.PrintMate.Fragmenti.MaterialsFragment"
         android:label="Materijali"
-        tools:layout="@layout/fragment_materials" />
+        tools:layout="@layout/fragment_materials" />*-->
 
     <fragment
         android:id="@+id/archiveFragment"

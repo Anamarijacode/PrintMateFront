@@ -189,6 +189,30 @@
 •&#160;&#160;Click “Connect Printer”, then go to octoeverywhere.com, log in, and link your account.\n
 •&#160;&#160;Your printer is now available online via the OctoEverywhere portal.
 </string>
+    <string name="printer_name_title">Naziv printera</string>
 
+    <!-- Statusi -->
+    <string name="status_online">Online</string>
+    <string name="status_offline">Offline</string>
+
+    <!-- Temperature -->
+    <string name="template_temp_extruder">Temp dizne: %1$d °C</string>
+    <string name="template_temp_bed">Temp podloge: %1$d °C</string>
+    <string name="template_fan_speed">Brzina ventilatora: %1$d</string>
+    <string name="template_z_offset">Z-offset: %1$.2f</string>
+
+    <!-- Kontrole -->
+    <string name="controls_label">G</string>
+    <string name="title_gcode_details">Naziv G-koda</string>
+    <string name="label_textual">Tekstualni</string>
+    <string name="label_gallery">Galerija</string>
+    <string name="label_stats">Statistika</string>
+    <string name="label_price">Cijena</string>
+    <string name="action_print">Ispiši</string>
+    <string name="cd_textual">Tekstualna sekcija</string>
+    <string name="cd_gallery">Galerija slika</string>
+    <string name="cd_stats">Statistika</string>
+    <string name="cd_price">Cijena izrade</string>
+    <string name="ispis">Print</string>
 
 </resources>

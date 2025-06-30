@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Shadow -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#33000000"/> <!-- Poluprozirno crno -->
+            <corners android:radius="22dp"/>
+        </shape>
+    </item>
+
+    <!-- Pozadina -->
+    <item
+        android:left="0dp"
+        android:right="0dp"
+        android:top="0dp"
+        android:bottom="2dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/button_color_secondary_variant"/> <!-- ili #FFF -->
+            <corners android:radius="22dp"/>
+        </shape>
+    </item>
+</layer-list>

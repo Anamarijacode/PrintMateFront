@@ -1,4 +1,3 @@
-/* ProizvodaciActivity.java */
 package com.printmate.PrintMate.Activity;
 
 import android.content.Intent;
@@ -6,6 +5,10 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Base64;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AdapterView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -32,7 +35,7 @@ import retrofit2.Response;
 
 public class ProizvodaciActivity extends AppCompatActivity {
     private ProizvodjacAdapter adapter;
-    private List<Proizvodjac> sviProizvodjaci = new ArrayList<>();
+    private final List<Proizvodjac> sviProizvodjaci = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +60,38 @@ public class ProizvodaciActivity extends AppCompatActivity {
         });
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
+
+        // —— Spinner filter A–Z ——
+        Spinner spinner = findViewById(R.id.filterSpinnerProizvodjac);
+        List<String> letters = new ArrayList<>();
+        letters.add("Svi");
+        for (char c = 'A'; c <= 'Z'; c++) {
+            letters.add(String.valueOf(c));
+        }
+        ArrayAdapter<String> spinAdapter = new ArrayAdapter<>(
+                this,
+                android.R.layout.simple_spinner_dropdown_item,
+                letters
+        );
+        spinner.setAdapter(spinAdapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+                String sel = letters.get(pos);
+                if (sel.equals("Svi")) {
+                    adapter.filterList(sviProizvodjaci);
+                } else {
+                    List<Proizvodjac> filtrirani = new ArrayList<>();
+                    for (Proizvodjac p : sviProizvodjaci) {
+                        if (p.getNaziv().toUpperCase().startsWith(sel)) {
+                            filtrirani.add(p);
+                        }
+                    }
+                    adapter.filterList(filtrirani);
+                }
+            }
+            @Override public void onNothingSelected(AdapterView<?> parent) { }
+        });
+        // ————————————————
 
         setupSearch(searchView);
         fetchProizvodjaciFromApi();

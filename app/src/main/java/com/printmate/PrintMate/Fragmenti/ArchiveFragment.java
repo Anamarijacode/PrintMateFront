@@ -1,66 +1,146 @@
 package com.printmate.PrintMate.Fragmenti;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.SearchView;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.printmate.PrintMate.Adapter.GKodArhivaAdapter;
+import com.printmate.PrintMate.Klijenti.ApiClient;
+import com.printmate.PrintMate.Klijenti.AuthApi;
+import com.printmate.PrintMate.Modeli.Gkod;
 import com.printmate.PrintMate.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ArchiveFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class ArchiveFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private RecyclerView recyclerView;
+    private GKodArhivaAdapter adapter;
+    private SearchView searchView;
+    private final List<Gkod> masterList = new ArrayList<>();
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public ArchiveFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ArchiveFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ArchiveFragment newInstance(String param1, String param2) {
-        ArchiveFragment fragment = new ArchiveFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    private String currentUserId;
+    private String baseUrl;
+    private String apiKey;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+        SharedPreferences prefs = requireActivity()
+                .getSharedPreferences("auth", Context.MODE_PRIVATE);
+        currentUserId = prefs.getString("user_id", "");
+        apiKey        = prefs.getString("api_key", "");
+        baseUrl       = prefs.getString("base_url", "");
+
+        Log.d("ArchiveFragment", "CurrentUserId iz prefs: '" + currentUserId + "'");
+        Toast.makeText(requireContext(),
+                "UID='" + currentUserId + "'",
+                Toast.LENGTH_SHORT).show();
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_archive, container, false);
+    @Nullable @Override
+    public View onCreateView(
+            @NonNull LayoutInflater inflater,
+            ViewGroup container,
+            Bundle savedInstanceState
+    ) {
+        View v = inflater.inflate(R.layout.fragment_archive, container, false);
+
+        recyclerView = v.findViewById(R.id.gkodRecyclerView);
+        searchView   = v.findViewById(R.id.searchViewProizvodjacArhiva);
+
+        // ← use the archive adapter here
+        adapter = new GKodArhivaAdapter(
+                new ArrayList<>(),
+                baseUrl,
+                apiKey,
+                gkod -> {
+                    // dodatna logika po kliku (ako je potrebna)
+                }
+        );
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setAdapter(adapter);
+
+        fetchArchive();
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override public boolean onQueryTextSubmit(String query) {
+                applyFilter(query);
+                return true;
+            }
+            @Override public boolean onQueryTextChange(String newText) {
+                applyFilter(newText);
+                return true;
+            }
+        });
+
+        return v;
+    }
+
+    private void fetchArchive() {
+        AuthApi api = ApiClient.getAuthApi();
+        api.getGkodList().enqueue(new Callback<List<Gkod>>() {
+            @Override
+            public void onResponse(Call<List<Gkod>> call, Response<List<Gkod>> response) {
+                if (!response.isSuccessful() || response.body() == null) {
+                    Toast.makeText(getContext(),
+                            "Neuspjelo preuzimanje arhive",
+                            Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                List<Gkod> all = response.body();
+                Log.d("ArchiveFragment", "Server vratio " + all.size() + " GKOD-ova");
+                Toast.makeText(getContext(),
+                        "Server vratio " + all.size() + " stavki",
+                        Toast.LENGTH_SHORT).show();
+
+                masterList.clear();
+                for (Gkod g : all) {
+                    if (String.valueOf(g.getUserId()).equals(currentUserId)) {
+                        masterList.add(g);
+                    }
+                }
+
+                Log.d("ArchiveFragment", "Nakon filtera: " + masterList.size());
+                adapter.updateData(masterList);
+            }
+
+            @Override
+            public void onFailure(Call<List<Gkod>> call, Throwable t) {
+                Toast.makeText(getContext(),
+                        "Greška: " + t.getMessage(),
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void applyFilter(String query) {
+        String lower = query.toLowerCase().trim();
+        List<Gkod> filtered = new ArrayList<>();
+        for (Gkod g : masterList) {
+            if (g.getNaziv().toLowerCase().contains(lower)) {
+                filtered.add(g);
+            }
+        }
+        adapter.updateData(filtered);
     }
 }

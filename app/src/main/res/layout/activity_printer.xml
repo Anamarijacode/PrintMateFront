@@ -25,19 +25,21 @@
         app:layout_constraintTop_toBottomOf="@+id/todaberitePrinter">
 
 
-        <ImageView
+        <!-- umesto ImageView filterSpinnerPrinter -->
+        <Spinner
             android:id="@+id/filterSpinnerPrinter"
-            android:layout_width="41dp"
+            android:layout_width="wrap_content"
             android:layout_height="34dp"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="24dp"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="10dp"
             android:padding="4dp"
-            android:src="@drawable/baseline_dehaze_24"
-            app:layout_constraintEnd_toStartOf="@+id/separatorPrinter"
+            android:spinnerMode="dropdown"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/separatorPrinter"/>
+
 
         <ImageView
             android:id="@+id/separatorPrinter"

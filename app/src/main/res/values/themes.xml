@@ -24,6 +24,7 @@
     <color name="button_color_primary">#65558F</color>
     <color name="button_color_secondary">#EADDFF</color>
     <color name="button_color_primary_varian">#EADDFF</color>
+    <color name="button_color_secondary_variant">#65558F</color>
 
     <!--Inputi-->
     <color name="input_primary">#F1EBFC</color>
@@ -46,10 +47,19 @@
     <color name="icons">@color/printMatePurpule</color>
     <color name="text_upute">@android:color/black</color>
     <!-- Base application theme. -->
-    <style name="Base.Theme.PrintMate" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="MySweetDialogStyle" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">24dp</item>
+        <item name="android:background">@drawable/sweet_dialog_bg</item>
+        <item name="android:textColorPrimary">@color/black</item>
     </style>
+    <style name="SearchViewWhite" parent="Widget.AppCompat.SearchView">
+        <!-- boja unesenog teksta -->
+        <item name="android:textColor">@android:color/white</item>
+        <!-- boja hint-a -->
+        <item name="android:textColorHint">@android:color/white</item>
+    </style>
+
 
 
 </resources>

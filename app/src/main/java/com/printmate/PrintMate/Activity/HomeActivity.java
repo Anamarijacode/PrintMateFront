@@ -26,7 +26,6 @@ import kotlin.jvm.functions.Function1;
 public class HomeActivity extends AppCompatActivity {
 
     private static final int HOME_ITEM      = R.id.homeFragment;
-    private static final int MATERIALS_ITEM = R.id.materialsFragment;
     private static final int ARCHIVE_ITEM   = R.id.archiveFragment;
     private static final int PROFILE_ITEM   = R.id.profileFragment;
 
@@ -72,7 +71,6 @@ if (getSupportActionBar() != null) {
     private void setUpBottomNavigation() {
         List<CurvedBottomNavigation.Model> items = Arrays.asList(
                 new CurvedBottomNavigation.Model(HOME_ITEM,      "Početna",   R.drawable.ic_home_filled),
-                new CurvedBottomNavigation.Model(MATERIALS_ITEM, "Materijali",R.drawable.filament_filled),
                 new CurvedBottomNavigation.Model(ARCHIVE_ITEM,   "Arhiva",    R.drawable.ic_arhive),
                 new CurvedBottomNavigation.Model(PROFILE_ITEM,   "Profil",    R.drawable.ic_person)
         );

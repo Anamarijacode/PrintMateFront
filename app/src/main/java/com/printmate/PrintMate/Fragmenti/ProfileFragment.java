@@ -47,8 +47,6 @@ public class ProfileFragment extends Fragment {
         tvMinutes      = view.findViewById(R.id.tvMinutes);
         tvMaterial     = view.findViewById(R.id.tvMaterial);
 
-        btnSettings      = view.findViewById(R.id.btnSettings);
-        btnDeleteProfile = view.findViewById(R.id.btndelete);
         btnLogout        = view.findViewById(R.id.btnLogout);
 
         // Load user data (e.g., from SharedPreferences)
@@ -73,15 +71,6 @@ public class ProfileFragment extends Fragment {
             tvAvatar.setText(initial);
         }
 
-        // Settings button (no-op)
-        btnSettings.setOnClickListener(v ->
-                Toast.makeText(getContext(), "Settings klik (nije implementirano)", Toast.LENGTH_SHORT).show()
-        );
-
-        // Delete profile button (no-op)
-        btnDeleteProfile.setOnClickListener(v ->
-                Toast.makeText(getContext(), "Delete Profile klik (nije implementirano)", Toast.LENGTH_SHORT).show()
-        );
 
         // Logout: clear prefs and back to login
         btnLogout.setOnClickListener(v -> {

@@ -24,8 +24,8 @@ public class PrinterAdapter extends RecyclerView.Adapter<PrinterAdapter.VH> {
     }
 
     private List<Printer> list;
-    private Context ctx;
-    private OnSelectListener listener;
+    private final Context ctx;
+    private final OnSelectListener listener;
 
     public PrinterAdapter(Context ctx, List<Printer> list, OnSelectListener listener) {
         this.ctx = ctx;
@@ -42,8 +42,6 @@ public class PrinterAdapter extends RecyclerView.Adapter<PrinterAdapter.VH> {
     @Override
     public void onBindViewHolder(@NonNull VH h, int pos) {
         Printer p = list.get(pos);
-
-        // Stavljamo naziv i sliku
         h.textNaziv.setText(p.getNaziv());
         Bitmap bmp = p.getLogoBitmap();
         if (bmp != null) {
@@ -51,19 +49,23 @@ public class PrinterAdapter extends RecyclerView.Adapter<PrinterAdapter.VH> {
         } else {
             h.imagePrinter.setImageResource(R.drawable.ic_home);
         }
-
-        // Kad se klikne, vraćamo printer model u activity
         h.btnOdaberi.setOnClickListener(v -> listener.onSelect(p));
     }
 
-    @Override
-    public int getItemCount() {
+    @Override public int getItemCount() {
         return list.size();
     }
 
+    // —— NOVO: za Spinner filtriranje ——
+    public void filterList(List<Printer> newList) {
+        this.list = newList;
+        notifyDataSetChanged();
+    }
+    // ——————————————————————————
+
     static class VH extends RecyclerView.ViewHolder {
-        ImageView       imagePrinter;
-        TextView        textNaziv;
+        ImageView imagePrinter;
+        TextView textNaziv;
         AppCompatButton btnOdaberi;
 
         VH(@NonNull View itemView) {

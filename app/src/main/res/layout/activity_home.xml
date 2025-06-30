@@ -8,7 +8,9 @@
     android:clipToPadding="false"
     android:clipChildren="false"
     tools:context=".Activity.HomeActivity"
-    android:background="@color/home_backgroun">
+    android:background="@color/home_backgroun"
+    android:fitsSystemWindows="true"
+   >
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_host_fragment"
@@ -20,7 +22,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/curvedNav"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"/>
 
     <com.qamar.curvedbottomnaviagtion.CurvedBottomNavigation
         android:id="@+id/curvedNav"

@@ -23,6 +23,7 @@
     <!--Gumbi-->
     <color name="button_color_primary">#2A1958</color>
     <color name="button_color_secondary">#65558F</color>
+    <color name="button_color_secondary_variant">#EADDFF</color>
 
     <!--Inputi-->
     <color name="input_primary">#65558F</color>
@@ -40,10 +41,18 @@
     <color name="icons">@color/printMateWhite</color>
     <color name="text_upute">@color/printMateWhite</color>
     <!-- Base application theme. -->
-    <style name="Base.Theme.PrintMate" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    <style name="MySweetDialogStyle" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">24dp</item>
+        <item name="android:background">@drawable/sweet_dialog_bg</item>
+        <item name="android:textColorPrimary">@color/black</item>
     </style>
 
+    <style name="SearchViewWhite" parent="Widget.AppCompat.SearchView">
+        <!-- boja unesenog teksta -->
+        <item name="android:textColor">@android:color/white</item>
+        <!-- boja hint-a -->
+        <item name="android:textColorHint">@android:color/white</item>
+    </style>
 
 </resources>
