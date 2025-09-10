@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color_secondary">
+
+    <!-- NASLOV -->
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="352dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="55dp"
+        android:background="@drawable/rounded_printer"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageButton
+            android:id="@+id/backIcon"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="7dp"
+            android:background="@drawable/rounded_button"
+            android:contentDescription="@string/settings"
+            android:src="@drawable/arrow_back"
+            app:tint="@color/input_secondary" />
+
+        <TextView
+            android:id="@+id/textNaslovDetaljiAndroid"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/actor"
+            android:gravity="center"
+            android:text="Naziv printera"
+            android:textColor="@color/input_secondary"
+            android:textSize="22sp" />
+    </LinearLayout>
+
+    <!-- PRINTER CARD -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/printerCard"
+        android:layout_width="356dp"
+        android:layout_height="160dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/rounded_printer"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headerLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/rounded_printer"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <!-- Slika printera -->
+            <ImageView
+                android:id="@+id/printerImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                android:src="@drawable/baseline_no_photography_24"
+                />
+
+            <!-- Status Online i ostalo -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:paddingStart="14dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/statusOnline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Online"
+                        android:textColor="@color/input_secondary"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Gumbići gore desno -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:gravity="center_vertical|end"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/btn_card_settings"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="7dp"
+                    android:background="@drawable/rounded_button"
+                    android:contentDescription="@string/settings"
+                    android:src="@drawable/rounded_delete_24"
+                    app:tint="@color/input_secondary" />
+                <ImageButton
+                    android:id="@+id/btn_tune"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginEnd="7dp"
+                    android:background="@drawable/rounded_button"
+                    android:src="@drawable/baseline_tune_24"
+                    app:tint="@color/input_secondary" />
+
+
+                <ImageButton
+                    android:id="@+id/btn_card_gcode"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:background="@drawable/rounded_button"
+                    android:src="@drawable/baseline_g_mobiledata_24"
+                    app:tint="@color/input_secondary" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- STATUS + ACTIONS: DVIJE KARTICE SIDE-BY-SIDE -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_status"
+        android:layout_width="375dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/rounded_printer"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toStartOf="@id/card_actions"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/printerCard">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/rounded_printer"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/temp_nozzle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Temp dizne: 215 °C"
+                android:textColor="@color/input_secondary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/temp_bed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Temp podloge: 60 °C"
+                android:textColor="@color/input_secondary"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/fan_speed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Brzina ventilatora: 0"
+                android:textColor="@color/input_secondary"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/z_offset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Z-offset: -0.60"
+                android:textColor="@color/input_secondary"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+    <!-- GRAF -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/chartCard"
+        android:layout_width="359dp"
+        android:layout_height="236dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="138dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/rounded_printer"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/card_status">
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/temperature_chart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/button_color_secondary_variant" />
+    </androidx.cardview.widget.CardView>
+
+    <!-- TABLICA -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/tableCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="18dp"
+        app:cardElevation="3dp"
+        app:cardBackgroundColor="@android:color/white"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintTop_toBottomOf="@id/chartCard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp">
+    </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/logoOdabir"
+        android:layout_width="352dp"
+        android:layout_height="118dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="49dp"
+        android:src="@drawable/logoandiconviolet"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

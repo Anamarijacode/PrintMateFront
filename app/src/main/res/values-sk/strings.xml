@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="language_chose">Vyberte jazyk</string>
+    <string name="zapocnimo">Začnime!</string>
+    <string name="email">E-mail</string>
+    <string name="enter_email">Zadajte svoju e-mailovú adresu</string>
+    <string name="lozinka">Heslo</string>
+    <string name="unseite_lozinku">Zadajte svoje heslo</string>
+    <string name="prijavi_se_btn">Prihláste sa</string>
+    <string name="prijavi_se_btn_google">Prihláste sa pomocou Google</string>
+    <string name="nemas_racun_link">Nemáte účet? Zaregistrujte sa tu</string>
+    <string name="potvrdi_lozinku">Potvrďte heslo</string>
+    <string name="ponovni_unos_lozinke">Zadajte heslo znova</string>
+    <string name="ime">Meno</string>
+    <string name="unesite_ime">Zadajte svoje meno</string>
+    <string name="prezime">Priezvisko</string>
+    <string name="prezime_unos">Zadajte svoje priezvisko</string>
+    <string name="broj_mobitela">Telefónne číslo</string>
+    <string name="unesite_broj_mobitela">Zadajte svoje telefónne číslo</string>
+    <string name="registriraj_se_btn">Zaregistrujte sa</string>
+    <string name="registriraj_se_googlom_btn">Zaregistrujte sa v službe Google</string>
+    <string name="odaberi_j">Vyberte jazyk</string>
+    <string name="engleski">Angličtina</string>
+    <string name="hrvatski">Chorvátsky</string>
+    <string name="bosanski">Bosniansky</string>
+    <string name="srpski">Srbský</string>
+    <string name="madarski">Maďarský</string>
+    <string name="slovacki">Slovenský</string>
+    <string name="slovenski">Slovan</string>
+    <string name="odaberite_proizvodaca">Vyberte výrobcu</string>
+    <string name="preskoci_btn">Preskočiť</string>
+    <string name="proizvodaci_serch">Zadajte názov výrobcu</string>
+    <string name="odaberite_printer">Vyberte 3D tlačiareň</string>
+    <string name="d_printer_serch">Zadajte názov 3D tlačiarne</string>
+    <string name="odaberi_btn">Vybrať</string>
+    <string name="specifikacije_printera">Špecifikácie tlačiarne</string>
+    <string name="daljen_upute">Ďalšie pokyny</string>
+    <string name="vrati_se">Späť</string>
+    <string name="nastvi_btn">Pokračovať</string>
+    <string name="hello_blank_fragment">Ahoj, prázdny fragment!</string>
+    <string name="postavljen_octoprint">OctoPrint už mám nastavený!</string>
+    <string name="zelim_postviti_octo_windows">Chcem nastaviť OctoPrint na Windows!</string>
+    <string name="zelim_postviti_octo_android">Chcem nastaviť OctoPrint na Android!</string>
+    <string name="zelim_postviti_octo_raspbery">Chcem nastaviť OctoPrint na Raspberry Pi!</string>
+    <string name="first_fragment_label">Prvý fragment</string>
+    <string name="second_fragment_label">Druhý fragment</string>
+    <string name="next">Ďalšie</string>
+    <string name="previous">Predchádzajúce</string>
+    <string name="spojise_na_printer">Pripojiť sa k tlačiarni</string>
+    <string name="api_key">API kľúč</string>
+    <string name="shared_connection">Zdieľané pripojenie</string>
+    <string name="kako_p_api">Ako nájsť API kľúč?</string>
+    <string name="kako_p_sh">Ako získať odkaz na zdieľané pripojenie?</string>
+    <string name="printers">Tlačiarne</string>
+    <string name="log_out">Odhlásiť sa</string>
+    <string name="statistika_ispisa">Štatistika tlače</string>
+    <string name="delete_profile">Vymazať profil</string>
+    <string name="broj_ispisa">Počet tlačí</string>
+    <string name="preferencija">Nastavenia</string>
+    <string name="dodaj_printer">Pridať tlačiareň</string>
+    <string name="naslov_RaspberryPi">Raspberry Pi (OctoPi) + OctoEverywhere</string>
+
+    <string name="podnaslov_a_raspberry">A) Inštalácia OctoPrint (OctoPi)</string>
+    <string name="lista_podnaslovAA">
+Stiahnite si OctoPi obraz odtiaľto.
+
+Nahrajte obraz na microSD kartu pomocou Raspberry Pi Imager alebo Etcher.
+
+Upravte súbor octopi-wpa-supplicant.txt na SD karte a zadajte vaše Wi-Fi údaje.
+
+Vložte SD kartu do Raspberry Pi, pripojte tlačiareň a zapnite zariadenie.
+
+Nájdite Raspberry Pi v sieti: http://octopi.local alebo pomocou jeho IP adresy.
+</string>
+
+    <string name="podnaslov_b_raspberry">B) Inštalácia OctoEverywhere</string>
+    <string name="lista_podnaslovBB">
+Otvorte OctoPrint vo webovom prehliadači.
+
+Prejdite do Nastavenia &gt; Plugin Manager &gt; Get More...
+
+Vyhľadajte „OctoEverywhere“ a kliknite na Inštalovať.
+
+Reštartujte OctoPrint, keď to systém vyžaduje.
+
+Prejdite do Nastavenia &gt; OctoEverywhere.
+
+Kliknite na „Pripojiť tlačiareň“, otvorte stránku octoeverywhere.com, prihláste sa a prepojte svoj účet.
+
+Vaša tlačiareň je teraz dostupná online prostredníctvom portálu OctoEverywhere.
+</string>
+
+    <string name="naslov_android">Android (Octo4a) + OctoEverywhere</string>
+
+    <string name="podnaslov_a_android">A) Inštalácia OctoPrint cez Octo4a</string>
+    <string name="lista_podnaslovAA_android">
+Nainštalujte si aplikáciu Octo4a na svoje Android zariadenie (oficiálny GitHub: https://github.com/feelfreelinux/octo4a).
+
+Otvorte Octo4a a postupujte podľa pokynov na inštaláciu OctoPrint.
+
+Nastavte potrebné oprávnenia a prístup k úložisku pre Octo4a.
+
+Pripojte 3D tlačiareň k Android zariadeniu cez USB OTG kábel.
+
+Spustite OctoPrint z aplikácie Octo4a.
+
+Po spustení otvorte OctoPrint v prehliadači (na zariadení: http://localhost:5000 alebo cez IP adresu v miestnej sieti).
+
+Prejdite cez základného sprievodcu nastavením OctoPrint.
+</string>
+
+    <string name="podnaslov_b_android">B) Inštalácia OctoEverywhere</string>
+    <string name="lista_podnaslovBB_android">
+Otvorte webové rozhranie OctoPrint v prehliadači.
+
+Prejdite do Nastavenia &gt; Plugin Manager &gt; Get More...
+
+Vyhľadajte „OctoEverywhere“ a kliknite na Inštalovať.
+
+Reštartujte OctoPrint, keď to systém vyžaduje.
+
+Prejdite do Nastavenia &gt; OctoEverywhere a kliknite na „Pripojiť tlačiareň“.
+
+Otvorte stránku octoeverywhere.com, prihláste sa a prepojte svoju tlačiareň.
+
+Vaša tlačiareň je teraz dostupná online cez portál OctoEverywhere.
+</string>
+
+    <string name="naslov_windows">Windows (lokálne spustenie) + OctoEverywhere</string>
+
+    <string name="podnaslov_a_windows">A) Inštalácia OctoPrint na Windows</string>
+    <string name="lista_podnaslovAA_windows">
+Nainštalujte Python verzie 3.7–3.10.
+
+Otvorte príkazový riadok a spustite:
+python -m venv OctoPrint
+OctoPrint\Scripts\activate
+pip install octoprint
+octoprint serve
+
+Otvorte v prehliadači: http://localhost:5000
+
+Dokončite základné nastavenie.
+</string>
+
+    <string name="podnaslov_b_windows">B) Inštalácia OctoEverywhere</string>
+    <string name="lista_podnaslovBB_windows">
+V rozhraní OctoPrint (v prehliadači na vašom Windows počítači):
+
+Prejdite do Nastavenia &gt; Plugin Manager &gt; Get More...
+
+Nájdite „OctoEverywhere“ a nainštalujte ho.
+
+Reštartujte OctoPrint, ak to systém vyžaduje.
+
+Prejdite do Nastavenia &gt; OctoEverywhere a kliknite na „Pripojiť tlačiareň“.
+
+Prihláste sa na octoeverywhere.com s rovnakým účtom a prepojte svoju tlačiareň.
+
+Teraz môžete pristupovať k svojej tlačiarni z akéhokoľvek zariadenia cez OctoEverywhere.
+</string>
+    <string name="settings">Nastavenia</string>
+</resources>

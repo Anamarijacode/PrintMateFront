@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.SpojNaPrinterActivity"
+    android:background="@color/background_color_primary_variant">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout5"
+        android:layout_width="360dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="49dp"
+        android:layout_marginEnd="26dp"
+        android:background="@drawable/rounden_layout_naslov"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txtSpoj"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="85dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="85dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/actor"
+            android:text="@string/spojise_na_printer"
+            android:textColor="@color/text_color_primary"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="313dp"
+        android:text="@string/api_key"
+        android:textColor="@color/text_color_primary"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout5" />
+    <EditText
+        android:id="@+id/unesitAPi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="23dp"
+        android:padding="5dp"
+        android:background="@drawable/rounded_edittext"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:inputType="textUri"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:scrollHorizontally="true"
+        android:hyphenationFrequency="none"
+    />
+
+
+    <!-- Ispod Google-gumba: link na registraciju -->
+
+    <TextView
+        android:id="@+id/kakoPronaciAPI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="121dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="143dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/kako_p_api"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/unesitAPi" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="213dp"
+        android:text="@string/shared_connection"
+        android:textColor="@color/text_color_primary"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kakoPronaciAPI" />
+    <EditText
+        android:id="@+id/sharedConnection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="23dp"
+        android:padding="5dp"
+        android:background="@drawable/rounded_edittext"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        android:inputType="textUri"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:scrollHorizontally="true"
+        android:hyphenationFrequency="none"
+        />
+
+
+    <TextView
+        android:id="@+id/kakoDobitiSharedConnection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="78dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="103dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:text="@string/kako_p_sh"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sharedConnection" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/spojiSe"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="56dp"
+        android:background="@drawable/rounded_button_6558f_color"
+        android:fontFamily="@font/actor"
+        android:text="@string/spojise_na_printer"
+        android:textAllCaps="false"
+        android:textColor="@color/printMateWhite"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kakoDobitiSharedConnection" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/vratiSe"
+        android:layout_width="130dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="78dp"
+        android:layout_marginEnd="250dp"
+        android:background="@drawable/rounded_button_6558f_color"
+        android:drawableLeft="@drawable/arrow_back"
+        android:fontFamily="@font/actor"
+        android:paddingStart="15dp"
+        android:text="@string/vrati_se"
+        android:textAllCaps="false"
+        android:textColor="@color/printMateWhite"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spojiSe" />
+
+    <ImageView
+        android:id="@+id/zaPromjenu"
+        android:layout_width="186dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="113dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="112dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vratiSe"
+        android:src="?android:logo"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

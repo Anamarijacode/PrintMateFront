@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.LanguageActivity"
+    android:background="@color/background_color_primary">
+
+    <ImageView
+        android:id="@+id/languageLogoId"
+        android:layout_width="375dp"
+        android:layout_height="286dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginBottom="24dp"
+        android:src="@drawable/logoandiconwhite"
+        app:layout_constraintBottom_toTopOf="@+id/todaberiteJezik"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/todaberiteJezik"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="221dp"
+        android:fontFamily="@font/poppins"
+        android:gravity="left"
+        android:text="@string/language_chose"
+        android:textColor="@color/text_color_secondary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.025"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/languageLogoId" />
+
+    <Spinner
+        android:id="@+id/spinnerJezik"
+        android:layout_width="344dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="34dp"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="@color/button_color_secondary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/todaberiteJezik" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnZapocnimo"
+        android:layout_width="322dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="231dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="39dp"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="@color/button_color_secondary"
+        android:fontFamily="@font/poppins"
+        android:paddingTop="5dp"
+        android:text="@string/zapocnimo"
+        android:textAllCaps="false"
+        android:textColor="@color/text_color_primary"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerJezik" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

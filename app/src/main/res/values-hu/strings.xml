@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="language_chose">Válasszon nyelvet</string>
+    <string name="zapocnimo">Kezdjük el</string>
+    <string name="email">E-mail</string>
+    <string name="enter_email">Adja meg e-mail címét</string>
+    <string name="lozinka">Jelszó</string>
+    <string name="unseite_lozinku">Adja meg jelszavát</string>
+    <string name="prijavi_se_btn">Jelentkezzen be</string>
+    <string name="prijavi_se_btn_google">Jelentkezzen be a Google</string>
+    <string name="nemas_racun_link">Nincs fiókod? Regisztrálj itt</string>
+    <string name="potvrdi_lozinku">Erősítse meg a jelszót</string>
+    <string name="ponovni_unos_lozinke">Írja be újra a jelszót</string>
+    <string name="ime">Név</string>
+    <string name="unesite_ime">Írja be a nevét</string>
+    <string name="prezime">Vezetéknév</string>
+    <string name="prezime_unos">Adja meg vezetéknevét</string>
+    <string name="broj_mobitela">Telefonszám</string>
+    <string name="unesite_broj_mobitela">Adja meg telefonszámát</string>
+    <string name="registriraj_se_btn">Nyilvántartás</string>
+    <string name="registriraj_se_googlom_btn">Regisztráljon a Google-nál</string>
+    <string name="odaberi_j">Válasszon nyelvet</string>
+    <string name="engleski">Angol</string>
+    <string name="hrvatski">Horvát</string>
+    <string name="bosanski">Bosnyák</string>
+    <string name="srpski">Szerb</string>
+    <string name="madarski">Magyar</string>
+    <string name="slovacki">Szlovák</string>
+    <string name="slovenski">Szláv</string>
+        <string name="odaberite_proizvodaca">Válassza ki a gyártót</string>
+        <string name="preskoci_btn">Kihagyás</string>
+        <string name="proizvodaci_serch">Adja meg a gyártó nevét</string>
+        <string name="odaberite_printer">Válassza ki a 3D nyomtatót</string>
+        <string name="d_printer_serch">Adja meg a 3D nyomtató nevét</string>
+        <string name="odaberi_btn">Kiválaszt</string>
+        <string name="specifikacije_printera">Nyomtató specifikációk</string>
+        <string name="daljen_upute">További utasítások</string>
+        <string name="vrati_se">Vissza</string>
+        <string name="nastvi_btn">Folytatás</string>
+        <string name="hello_blank_fragment">Hello, üres fragment!</string>
+        <string name="postavljen_octoprint">Az OctoPrint már be van állítva!</string>
+        <string name="zelim_postviti_octo_windows">Windows rendszeren szeretném beállítani az OctoPrintet!</string>
+        <string name="zelim_postviti_octo_android">Androidon szeretném beállítani az OctoPrintet!</string>
+        <string name="zelim_postviti_octo_raspbery">Raspberry Pi-n szeretném beállítani az OctoPrintet!</string>
+        <string name="first_fragment_label">Első fragment</string>
+        <string name="second_fragment_label">Második fragment</string>
+        <string name="next">Következő</string>
+        <string name="previous">Előző</string>
+        <string name="spojise_na_printer">Csatlakozás a nyomtatóhoz</string>
+        <string name="api_key">API-kulcs</string>
+        <string name="shared_connection">Megosztott kapcsolat</string>
+        <string name="kako_p_api">Hogyan találjam meg az API-kulcsot?</string>
+        <string name="kako_p_sh">Hogyan szerezzek megosztott kapcsolat linket?</string>
+    <string name="printers">Nyomtatók</string>
+    <string name="log_out">Kijelentkezés</string>
+    <string name="statistika_ispisa">Nyomtatási statisztika</string>
+    <string name="delete_profile">Profil törlése</string>
+    <string name="broj_ispisa">Nyomtatások száma</string>
+    <string name="preferencija">Beállítások</string>
+    <string name="dodaj_printer">Nyomtató hozzáadása</string>
+    <string name="naslov_RaspberryPi">Raspberry Pi (OctoPi) + OctoEverywhere</string>
+
+    <string name="podnaslov_a_raspberry">A) OctoPrint telepítése (OctoPi)</string>
+    <string name="lista_podnaslovAA">
+Töltse le az OctoPi képfájlt innen.
+
+Írja a képfájlt egy microSD kártyára a Raspberry Pi Imager vagy az Etcher segítségével.
+
+Szerkessze az octopi-wpa-supplicant.txt fájlt az SD-kártyán, és adja meg a Wi-Fi hitelesítő adatokat.
+
+Helyezze be az SD-kártyát a Raspberry Pi-be, csatlakoztassa a nyomtatót, és kapcsolja be.
+
+Keresse meg a Raspberry Pi-t a hálózaton: http://octopi.local vagy az IP-címével.
+</string>
+
+    <string name="podnaslov_b_raspberry">B) OctoEverywhere telepítése</string>
+    <string name="lista_podnaslovBB">
+Nyissa meg az OctoPrint-et a böngészőben.
+
+Lépjen a Beállítások &gt; Plugin Manager &gt; Get More... menüpontra.
+
+Keressen rá az "OctoEverywhere" kiegészítőre, majd kattintson a Telepítésre.
+
+Indítsa újra az OctoPrint-et, ha kéri.
+
+Lépjen a Beállítások &gt; OctoEverywhere menüpontra.
+
+Kattintson a „Nyomtató csatlakoztatása” lehetőségre, nyissa meg az octoeverywhere.com oldalt, jelentkezzen be, és kapcsolja össze a fiókját.
+
+A nyomtatója mostantól online elérhető az OctoEverywhere portálon keresztül.
+</string>
+
+    <string name="naslov_android">Android (Octo4a) + OctoEverywhere</string>
+
+    <string name="podnaslov_a_android">A) OctoPrint telepítése Octo4a-val</string>
+    <string name="lista_podnaslovAA_android">
+Telepítse az Octo4a alkalmazást Android-eszközére (hivatalos GitHub: https://github.com/feelfreelinux/octo4a).
+
+Nyissa meg az Octo4a-t, és kövesse az OctoPrint telepítési lépéseit.
+
+Adjon meg minden szükséges engedélyt és tárhelyhozzáférést az Octo4a számára.
+
+Csatlakoztassa a 3D nyomtatót az Android-eszközhöz USB OTG-kábel segítségével.
+
+Indítsa el az OctoPrint-et az Octo4a alkalmazásból.
+
+Indítás után nyissa meg az OctoPrint-et böngészőben (az eszközön: http://localhost:5000 vagy a helyi hálózaton az IP-címmel).
+
+Végezze el az alapvető OctoPrint beállításokat a varázsló segítségével.
+</string>
+
+    <string name="podnaslov_b_android">B) OctoEverywhere telepítése</string>
+    <string name="lista_podnaslovBB_android">
+Nyissa meg az OctoPrint webes felületét a böngészőben.
+
+Lépjen a Beállítások &gt; Plugin Manager &gt; Get More... menüpontra.
+
+Keressen rá az "OctoEverywhere" kiegészítőre, majd kattintson a Telepítésre.
+
+Indítsa újra az OctoPrint-et, ha kéri.
+
+Lépjen a Beállítások &gt; OctoEverywhere menüpontra, majd kattintson a „Nyomtató csatlakoztatása” gombra.
+
+Lépjen be az octoeverywhere.com oldalra, jelentkezzen be, és kapcsolja hozzá a nyomtatót.
+
+A nyomtatója mostantól online elérhető az OctoEverywhere portálon keresztül.
+</string>
+
+    <string name="naslov_windows">Windows (helyi futtatás) + OctoEverywhere</string>
+
+    <string name="podnaslov_a_windows">A) OctoPrint telepítése Windowsra</string>
+    <string name="lista_podnaslovAA_windows">
+Telepítse a Python 3.7–3.10 verzióját.
+
+Nyisson meg egy Parancssort, és futtassa:
+python -m venv OctoPrint
+OctoPrint\Scripts\activate
+pip install octoprint
+octoprint serve
+
+Nyissa meg böngészőben: http://localhost:5000
+
+Végezze el az alapbeállításokat.
+</string>
+
+    <string name="podnaslov_b_windows">B) OctoEverywhere telepítése</string>
+    <string name="lista_podnaslovBB_windows">
+Az OctoPrint webes felületén (a Windows PC böngészőjében):
+
+Lépjen a Beállítások &gt; Plugin Manager &gt; Get More... menüpontra.
+
+Keresse meg az "OctoEverywhere" bővítményt, és telepítse.
+
+Indítsa újra az OctoPrint-et, ha szükséges.
+
+Lépjen a Beállítások &gt; OctoEverywhere menüpontra, majd kattintson a „Nyomtató csatlakoztatása” gombra.
+
+Jelentkezzen be ugyanazzal a fiókkal az octoeverywhere.com oldalon, és kapcsolja hozzá a nyomtatót.
+
+Mostantól bármilyen eszközről elérheti a nyomtatóját az OctoEverywhere segítségével.
+</string>
+    <string name="settings">Beállítások</string>
+</resources>

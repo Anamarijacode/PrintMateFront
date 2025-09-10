@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/home_backgroun"
+tools:context=".Fragmenti.ProfileFragment"
+android:id="@+id/profileFragment"
+   >
+
+<!-- Sadržaj fragmenta -->
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvAvatar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/bg_avatar_circle"
+            android:gravity="center"
+            android:text="A"
+            android:textColor="@android:color/white"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvName"
+            android:fontFamily="@font/roboto_bold"/>
+
+
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Ana Horvat"
+            android:textColor="@color/text_color_primary"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.482"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="ana@gmail.com"
+            android:textColor="@color/text_color_primary"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAvatar"
+            android:fontFamily="@font/roboto_bold"/>
+
+        <TextView
+            android:id="@+id/tvStatTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="240dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/statistika_ispisa"
+            android:textColor="@color/text_color_primary"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvEmail" />
+
+        <LinearLayout
+            android:id="@+id/layoutStats"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/tvStatTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- Prints -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tvPrintCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="default"
+                    android:textSize="28sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/broj_ispisa"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
+            <!-- Vertikalni separator -->
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/background_color_primary"/>
+
+            <!-- Minutes -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tvMinutes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="default"
+                    android:textSize="28sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="min"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/background_color_primary"/>
+
+            <!-- PLA preference -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/tvMaterial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="default"
+                    android:textSize="28sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/preferencija"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+<!--
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSettings"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="56dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:drawablePadding="12dp"
+            android:minHeight="0dp"
+            android:background="@drawable/rounded_layout_description"
+            android:includeFontPadding="false"
+            android:drawableLeft="@drawable/ic_settings"
+            android:drawableStart="@drawable/ic_settings"
+            android:drawableTint="@color/printMateWhite"
+            android:drawableTintMode="src_in"
+            android:drawableEnd="@drawable/arrow_forword"
+            android:text="@string/settings"
+            android:textColor="@color/printMateWhite"
+            android:textSize="30sp"
+            android:textAllCaps="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutStats"
+            android:fontFamily="@font/poppins"
+            android:backgroundTint="@color/background_color_primary"/>
+            -->
+
+
+<!--
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btndelete"
+            android:backgroundTint="@color/background_color_primary"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:text="@string/delete_profile"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@id/btnSettings"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/printMateWhite"
+            android:fontFamily="@font/poppins"
+            android:textSize="30sp"
+            android:textAllCaps="false"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:drawablePadding="12dp"
+            android:minHeight="0dp"
+            android:background="@drawable/rounded_layout_description"
+            android:includeFontPadding="false"
+            android:drawableStart="@drawable/ic_delete"
+            android:drawableTint="@color/printMateWhite"
+            android:drawableTintMode="src_in"
+            />
+            -->
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnLogout"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="44dp"
+            android:background="@drawable/rounded_layout_description"
+            android:backgroundTint="@color/background_color_primary"
+            android:drawableStart="@drawable/ic_logout"
+            android:drawablePadding="12dp"
+            android:drawableTint="@color/printMateWhite"
+            android:drawableTintMode="src_in"
+            android:fontFamily="@font/poppins"
+            android:icon="@drawable/ic_logout"
+            android:includeFontPadding="false"
+            android:minHeight="0dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/log_out"
+            android:textAllCaps="false"
+            android:textColor="@color/printMateWhite"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutStats" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

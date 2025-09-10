@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.printmate.PrintMate.Activity.OctoEverwereActivity"
+    android:background="@color/background_color_primary_variant">
+
+    <!-- Naslov -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounden_layout_naslov"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/textNaslovOctoEverywhere"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:fontFamily="@font/actor"
+            android:gravity="center"
+            android:text="Kako pronaći OctoEverywhere Share Connection"
+            android:textColor="@color/text_color_primary"
+            android:textSize="22sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Sadržaj u ScrollView -->
+    <ScrollView
+        android:id="@+id/scrollContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toBottomOf="@id/constraintLayoutTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/buttonbackAndroidOcto">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Korak 1 -->
+            <TextView
+                android:id="@+id/subtitle1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:text="1. Instalirajte OctoEverywhere plugin"
+                android:textColor="@color/text_upute"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/actor"
+                android:text="– U OctoPrintu otvorite Settings > Plugin Manager > Available.\n– Potražite 'OctoEverywhere' i kliknite 'Install'."
+                android:textColor="@color/text_upute"
+                android:textSize="17sp" />
+
+            <!-- Korak 2 -->
+            <TextView
+                android:id="@+id/subtitle2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="2. Prijavite se na OctoEverywhere"
+                android:textColor="@color/text_upute"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/actor"
+                android:text="– Nakon instalacije, otvorite OctoEverywhere panel u OctoPrintu.\n– Prijavite se koristeći svoj OctoEverywhere račun ili Google/GitHub autentikaciju."
+                android:textColor="@color/text_upute"
+                android:textSize="17sp" />
+
+            <!-- Korak 3 -->
+            <TextView
+                android:id="@+id/subtitle3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="3. Aktivirajte Share Connection"
+                android:textColor="@color/text_upute"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/actor"
+                android:text="– U OctoEverywhere panelu omogućite 'Enable Share Connection'.\n– Pričekajte da se uspostavi veza (status 'Connected')."
+                android:textColor="@color/text_upute"
+                android:textSize="17sp" />
+
+            <!-- Korak 4 -->
+            <TextView
+                android:id="@+id/subtitle4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="4. Kopirajte Share URL"
+                android:textColor="@color/text_upute"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/text4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/actor"
+                android:text="– Nakon veze, kliknite 'Copy Share Link'.\n– URL je sada u međuspremniku i spreman za dijeljenje."
+                android:textColor="@color/text_upute"
+                android:textSize="17sp" />
+
+            <!-- Korak 5 -->
+            <TextView
+                android:id="@+id/subtitle5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="5. Testirajte vezu"
+                android:textColor="@color/text_upute"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/text5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/actor"
+                android:text="– Otvorite kopirani URL u pregledniku ili drugom uređaju.\n– Provjerite pristup i upravljanje printerom putem OctoEverywhere."
+                android:textColor="@color/text_upute"
+                android:textSize="17sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Navigacijske tipke -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonbackAndroidOcto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/rounded_button_6558f_color"
+        android:drawableLeft="@drawable/arrow_back"
+        android:fontFamily="@font/actor"
+        android:paddingStart="10dp"
+        android:text="Vrati se"
+        android:textAllCaps="false"
+        android:textColor="@color/printMateWhite"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonfowordAndroidOcto"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonfowordAndroidOcto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/rounded_button_6558f_color"
+        android:drawableRight="@drawable/arrow_forword"
+        android:fontFamily="@font/actor"
+        android:paddingEnd="10dp"
+        android:text="Nastavi"
+        android:textAllCaps="false"
+        android:textColor="@color/printMateWhite"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/buttonbackAndroidOcto"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

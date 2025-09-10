@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="language_chose">Odaberite jezik</string>
+    <string name="zapocnimo">Hajde da počnemo!</string>
+    <string name="email">E-mail</string>
+    <string name="enter_email">Unesite svoju e-mail adresu</string>
+    <string name="lozinka">Lozinka</string>
+    <string name="unseite_lozinku">Unesite svoju lozinku</string>
+    <string name="prijavi_se_btn">Prijavite se</string>
+    <string name="prijavi_se_btn_google">Prijavite se sa Google</string>
+    <string name="nemas_racun_link">Nemate račun? Registrujte se ovdje</string>
+    <string name="potvrdi_lozinku">Potvrdite lozinku</string>
+    <string name="ponovni_unos_lozinke">Ponovo unesite lozinku</string>
+    <string name="ime">Ime</string>
+    <string name="unesite_ime">Unesite svoje ime</string>
+    <string name="prezime">Prezime</string>
+    <string name="prezime_unos">Unesite svoje prezime</string>
+    <string name="broj_mobitela">Broj telefona</string>
+    <string name="unesite_broj_mobitela">Unesite svoj broj telefona</string>
+    <string name="registriraj_se_btn">Registrirajte se</string>
+    <string name="registriraj_se_googlom_btn">Registrirajte se sa Google</string>
+    <string name="odaberi_j">Odaberite jezik</string>
+    <string name="engleski">Engleski</string>
+    <string name="hrvatski">Hrvatski</string>
+    <string name="bosanski">Bosanski</string>
+    <string name="srpski">Srpski</string>
+    <string name="madarski">Mađarski</string>
+    <string name="slovacki">Slovak</string>
+    <string name="slovenski">Slav</string>
+        <string name="odaberite_proizvodaca">Odaberite proizvođača</string>
+        <string name="preskoci_btn">Preskoči</string>
+        <string name="proizvodaci_serch">Unesite naziv proizvođača</string>
+        <string name="odaberite_printer">Odaberite 3D pisač</string>
+        <string name="d_printer_serch">Unesite naziv 3D pisača</string>
+        <string name="odaberi_btn">Odaberi</string>
+        <string name="specifikacije_printera">Specifikacije pisača</string>
+        <string name="daljen_upute">Daljnje upute</string>
+        <string name="vrati_se">Vrati se</string>
+        <string name="nastvi_btn">Nastavi</string>
+        <string name="hello_blank_fragment">Pozdrav, prazni fragment!</string>
+        <string name="postavljen_octoprint">OctoPrint sam već postavio!</string>
+        <string name="zelim_postviti_octo_windows">Želim postaviti OctoPrint na Windows!</string>
+        <string name="zelim_postviti_octo_android">Želim postaviti OctoPrint na Android!</string>
+        <string name="zelim_postviti_octo_raspbery">Želim postaviti OctoPrint na Raspberry Pi!</string>
+        <string name="first_fragment_label">Prvi fragment</string>
+        <string name="second_fragment_label">Drugi fragment</string>
+        <string name="next">Sljedeće</string>
+        <string name="previous">Prethodno</string>
+        <string name="spojise_na_printer">Povežite se na pisač</string>
+        <string name="api_key">API ključ</string>
+        <string name="shared_connection">Dijeljena veza</string>
+        <string name="kako_p_api">Kako pronaći API ključ?</string>
+        <string name="kako_p_sh">Kako dobiti poveznicu za dijeljenu vezu?</string>
+    <string name="log_out">Odjava</string>
+    <string name="printers">Printeri</string>
+    <string name="statistika_ispisa">Statistika ispisa</string>
+    <string name="delete_profile">Obriši profil</string>
+    <string name="broj_ispisa">Broj ispisa</string>
+    <string name="preferencija">Postavke</string>
+    <string name="dodaj_printer">Dodaj printer</string>
+    <string name="naslov_RaspberryPi">Raspberry Pi (OctoPi) + OctoEverywhere</string>
+    <string name="settings">Postavke</string>
+    <string name="podnaslov_a_raspberry">A) Instalacija OctoPrinta (OctoPi)</string>
+    <string name="lista_podnaslovAA">
+Preuzmite OctoPi sliku ovdje.
+
+Zapišite sliku na microSD karticu koristeći Raspberry Pi Imager ili Etcher.
+
+Uredite fajl octopi-wpa-supplicant.txt na SD kartici i unesite podatke za vašu Wi-Fi mrežu.
+
+Ubacite SD karticu u Raspberry Pi, povežite printer i uključite napajanje.
+
+Pronađite Raspberry Pi na mreži: http://octopi.local ili preko njegove IP adrese.
+</string>
+
+    <string name="podnaslov_b_raspberry">B) Instalacija OctoEverywhere</string>
+    <string name="lista_podnaslovBB">
+Otvorite OctoPrint u internet pregledniku.
+
+Idite na Postavke &gt; Plugin Manager &gt; Get More...
+
+Pretražite "OctoEverywhere" i kliknite na Instaliraj.
+
+Ponovo pokrenite OctoPrint kada se to zatraži.
+
+Idite na Postavke &gt; OctoEverywhere.
+
+Kliknite "Poveži printer", otvorite octoeverywhere.com, prijavite se i povežite svoj nalog.
+
+Vaš printer je sada dostupan online putem OctoEverywhere portala.
+</string>
+
+    <string name="naslov_android">Android (Octo4a) + OctoEverywhere</string>
+
+    <string name="podnaslov_a_android">A) Instalacija OctoPrinta preko Octo4a</string>
+    <string name="lista_podnaslovAA_android">
+Instalirajte Octo4a aplikaciju na svoj Android uređaj (zvanični GitHub: https://github.com/feelfreelinux/octo4a).
+
+Otvorite Octo4a i pratite upute za instalaciju OctoPrinta.
+
+Podesite potrebne dozvole i pristup memoriji za Octo4a.
+
+Povežite 3D printer sa Android uređajem putem USB OTG kabla.
+
+Pokrenite OctoPrint iz Octo4a aplikacije.
+
+Kada se pokrene, otvorite OctoPrint u internet pregledniku (na uređaju: http://localhost:5000 ili preko IP adrese na lokalnoj mreži).
+
+Prođite kroz osnovni čarobnjak za postavljanje OctoPrinta.
+</string>
+
+    <string name="podnaslov_b_android">B) Instalacija OctoEverywhere</string>
+    <string name="lista_podnaslovBB_android">
+Otvorite OctoPrint web sučelje u pregledniku.
+
+Idite na Postavke &gt; Plugin Manager &gt; Get More...
+
+Pretražite "OctoEverywhere" i kliknite na Instaliraj.
+
+Ponovo pokrenite OctoPrint kada se to zatraži.
+
+Idite na Postavke &gt; OctoEverywhere i kliknite "Poveži printer".
+
+Otvorite octoeverywhere.com, prijavite se i povežite svoj printer.
+
+Vaš printer je sada dostupan online putem OctoEverywhere portala.
+</string>
+
+    <string name="naslov_windows">Windows (lokalno pokretanje) + OctoEverywhere</string>
+
+    <string name="podnaslov_a_windows">A) Instalacija OctoPrinta na Windowsu</string>
+    <string name="lista_podnaslovAA_windows">
+Instalirajte Python verziju 3.7–3.10.
+
+Otvorite Command Prompt i pokrenite:
+python -m venv OctoPrint
+OctoPrint\Scripts\activate
+pip install octoprint
+octoprint serve
+
+Otvorite u internet pregledniku: http://localhost:5000
+
+Dovršite osnovno postavljanje.
+</string>
+
+    <string name="podnaslov_b_windows">B) Instalacija OctoEverywhere</string>
+    <string name="lista_podnaslovBB_windows">
+U OctoPrint web sučelju (preglednik na vašem Windows računaru):
+
+Idite na Postavke &gt; Plugin Manager &gt; Get More...
+
+Pronađite "OctoEverywhere" i instalirajte ga.
+
+Ponovo pokrenite OctoPrint ako se to zatraži.
+
+Idite na Postavke &gt; OctoEverywhere i kliknite "Poveži printer".
+
+Prijavite se na octoeverywhere.com s istim nalogom i povežite svoj printer.
+
+Sada možete pristupiti svom printeru s bilo kojeg uređaja putem OctoEverywhere.
+</string>
+
+</resources>

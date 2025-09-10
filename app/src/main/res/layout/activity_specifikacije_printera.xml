@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.SpecifikacijePrinteraActivity"
+    android:background="@color/background_color_primary_variant">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabPrinter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="13dp"
+        android:background="@color/fab_color_primary"
+        android:backgroundTint="@color/fab_color_primary"
+        android:src="@drawable/f2250_arrow"
+        app:borderWidth="0dp"
+        app:fabSize="mini"
+        app:layout_constraintEnd_toStartOf="@+id/constraintLayout2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="272dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="41dp"
+        android:background="@drawable/rounded_layout_65558f_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/fabPrinter"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="47dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="46dp"
+            android:layout_marginBottom="12dp"
+            android:fontFamily="@font/actor"
+            android:text="@string/specifikacije_printera"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:id="@+id/constraintLayout4"
+        android:layout_width="362dp"
+        android:layout_height="525dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="25dp"
+        android:background="@drawable/rounded_layout_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fabPrinter">
+
+        <TextView
+            android:id="@+id/txtNazivPrintera"
+            android:layout_width="340dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="12dp"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:text="DEFAULT"
+            android:textColor="@color/text_color_primary"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/slikaPrintera"
+            android:layout_width="176dp"
+            android:layout_height="181dp"
+            android:layout_marginStart="93dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="93dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtNazivPrintera" />
+
+        <TextView
+            android:id="@+id/txtOpisPrintera"
+            android:layout_width="336dp"
+            android:layout_height="242dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="21dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/actor"
+            android:scrollbars="vertical"
+            android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+            android:textColor="@color/text_color_primary"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/slikaPrintera" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/zaPromjenu"
+        android:layout_width="186dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="97dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="98dp"
+        android:layout_marginBottom="36dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4"
+        app:layout_constraintVertical_bias="1.0"
+        android:src="?android:logo"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

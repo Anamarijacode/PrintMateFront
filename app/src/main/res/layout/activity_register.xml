@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color_primary"
+    tools:context=".Activity.RegisterActivity">
+
+    <ImageView
+        android:id="@+id/printMateLogoRegistrirajSe"
+        android:layout_width="374dp"
+        android:layout_height="118dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/logoandiconwhite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/temailRegistrirajSe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/email"
+        android:textColor="@color/text_color_secondary"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/etemailRegistrirajSe"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/printMateLogoRegistrirajSe" />
+
+    <EditText
+        android:id="@+id/etemailRegistrirajSe"
+        android:layout_width="344dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="51dp"
+        android:background="@drawable/rounded_edittext"
+        android:fontFamily="@font/poppins"
+        android:hint="@string/enter_email"
+        android:paddingStart="24dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="24dp"
+        android:textColor="@color/text_color_primary"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/temailRegistrirajSe" />
+
+    <TextView
+        android:id="@+id/tlozinkaRegistrirajSe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/lozinka"
+        android:textColor="@color/text_color_secondary"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etemailRegistrirajSe" />
+
+    <EditText
+        android:id="@+id/etlozinkaRegistrirajSe"
+        android:layout_width="344dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="51dp"
+        android:background="@drawable/rounded_edittext"
+        android:fontFamily="@font/poppins"
+        android:hint="@string/unseite_lozinku"
+        android:paddingStart="24dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="24dp"
+        android:textColor="@color/text_color_primary"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tlozinkaRegistrirajSe"   android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/tlozinkaRegistrirajSePonovna"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/potvrdi_lozinku"
+        android:textColor="@color/text_color_secondary"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etlozinkaRegistrirajSe" />
+
+    <EditText
+        android:id="@+id/etlozinkaRegistrirajSePonovna"
+        android:layout_width="344dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="51dp"
+        android:background="@drawable/rounded_edittext"
+        android:fontFamily="@font/poppins"
+        android:hint="@string/ponovni_unos_lozinke"
+        android:paddingStart="24dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="24dp"
+        android:textColor="@color/text_color_primary"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tlozinkaRegistrirajSePonovna"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/tImeRegistracija"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="345dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/ime"
+        android:textColor="@color/text_color_secondary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etlozinkaRegistrirajSePonovna" />
+
+    <EditText
+        android:id="@+id/etImeRegistracija"
+        android:layout_width="344dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="51dp"
+        android:background="@drawable/rounded_edittext"
+        android:fontFamily="@font/poppins"
+        android:hint="@string/unesite_ime"
+        android:paddingStart="24dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="24dp"
+        android:textColor="@color/text_color_primary"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tImeRegistracija" />
+
+    <!--
+        <TextView
+            android:id="@+id/tBrojMobitela"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="269dp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/broj_mobitela"
+            android:textColor="@color/text_color_secondary"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etImeRegistracija" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayoutBroj"
+            android:layout_width="344dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="29dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/button_color_secondary"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tBrojMobitela">
+
+            <ImageView
+                android:id="@+id/iconeImageBroj"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Spinner
+                android:id="@+id/spinnerBrojMobitela"
+                android:layout_width="53dp"
+                android:layout_height="41dp"
+                android:layout_marginTop="2dp"
+                app:layout_constraintEnd_toStartOf="@id/separatorImageBroj"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@id/iconeImageBroj"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/separatorImageBroj"
+                android:layout_width="1dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="56dp"
+                android:background="@color/background_color_primary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iconeImageBroj"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/tPrijaviSeSaGooglomBroj"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="36dp"
+                android:fontFamily="@font/poppins"
+                android:paddingStart="24dp"
+                android:paddingTop="5dp"
+                android:text="@string/unesite_broj_mobitela"
+                android:textColor="@color/text_color_primary"
+                android:textSize="13dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/separatorImageBroj"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    -->
+
+    <TextView
+        android:id="@+id/tPrezimeRegistracija"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="313dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/prezime"
+        android:textColor="@color/text_color_secondary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etImeRegistracija" />
+
+    <EditText
+        android:id="@+id/etPrezimeRegistracija"
+        android:layout_width="344dp"
+        android:layout_height="42dp"
+
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="48dp"
+        android:background="@drawable/rounded_edittext"
+        android:fontFamily="@font/poppins"
+        android:hint="@string/prezime_unos"
+        android:paddingStart="24dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="24dp"
+        android:textColor="@color/text_color_primary"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tPrezimeRegistracija" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnRegistrirajSe"
+        android:layout_width="322dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="@color/button_color_secondary"
+        android:fontFamily="@font/poppins"
+        android:paddingTop="5dp"
+        android:text="@string/registriraj_se_btn"
+        android:textAllCaps="false"
+        android:textColor="@color/text_color_primary"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutRegistrirajSe"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutRegistrirajSe"
+        android:layout_width="322dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="28dp"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="@color/button_color_secondary"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/iconeImage"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/google"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/separatorImage"
+            android:layout_width="1dp"
+            android:layout_height="42dp"
+            android:background="@color/background_color_primary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iconeImage"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
+        <TextView
+            android:id="@+id/tPrijaviSeSaGooglom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/poppins"
+            android:paddingStart="24dp"
+            android:paddingTop="5dp"
+            android:text="@string/registriraj_se_googlom_btn"
+            android:textColor="@color/text_color_primary"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/separatorImage"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,218 @@
+<resources>
+    <string name="app_name" translatable="false">PrintMate</string>
+    <string name="language_chose">Choose a language</string>
+    <string name="zapocnimo">Let\'s start!</string>
+    <string name="email">E-mail</string>
+    <string name="enter_email">Enter your email address</string>
+    <string name="lozinka">Password</string>
+    <string name="unseite_lozinku">Enter your password</string>
+    <string name="prijavi_se_btn">Log in</string>
+    <string name="prijavi_se_btn_google">Log in with Google</string>
+    <string name="nemas_racun_link">Don\'t have an account? Register here</string>
+    <string name="potvrdi_lozinku">Confirm password</string>
+    <string name="ponovni_unos_lozinke">Enter the password again</string>
+    <string name="ime">Name</string>
+    <string name="unesite_ime">Enter your name</string>
+    <string name="prezime">Surname</string>
+    <string name="prezime_unos">Enter your surname</string>
+    <string name="broj_mobitela">Phone number</string>
+    <string name="unesite_broj_mobitela">Enter your phone number</string>
+    <string name="registriraj_se_btn">Register</string>
+    <string name="registriraj_se_googlom_btn">Register with Google</string>
+
+    <string name="odaberi_j">Choose a language</string>
+    <string name="engleski">English</string>
+    <string name="hrvatski">Croatian</string>
+    <string name="bosanski">Bosnian</string>
+    <string name="srpski">Serbian</string>
+    <string name="madarski">Hungarian</string>
+    <string name="slovacki">Slovak</string>
+    <string name="slovenski">Slovenian</string>
+
+
+    <string-array name="languages">
+        <item>@string/odaberi_j</item>
+        <item>@string/engleski</item>
+        <item>@string/hrvatski</item>
+        <item>@string/bosanski</item>
+        <item>@string/srpski</item>
+        <item>@string/slovacki</item>
+        <item>@string/slovenski</item>
+        <item>@string/madarski</item>
+    </string-array>
+
+    <string name="odaberite_proizvodaca">Select the manufacturer</string>
+    <string name="preskoci_btn">Skip</string>
+    <string name="proizvodaci_serch">Enter the name of the manufacturer</string>
+    <string name="odaberite_printer">Select 3D printer</string>
+    <string name="d_printer_serch">Enter the name of 3D printer</string>
+    <string name="odaberi_btn">Select</string>
+    <string name="specifikacije_printera">Printer specifications</string>
+    <string name="daljen_upute">Further instructions</string>
+    <string name="vrati_se">Go back</string>
+    <string name="nastvi_btn">Continue</string>
+    <string name="default_web_client_id" translatable="false">
+        468295654871-2bo041s15c8o6me3vl7j08cfl44324tr.apps.googleusercontent.com
+    </string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="postavljen_octoprint">I already have octoprint set up!</string>
+    <string name="zelim_postviti_octo_windows">I want to set up octoprint on windows!</string>
+    <string name="zelim_postviti_octo_android">I want to set up octoprint on android!</string>
+    <string name="zelim_postviti_octo_raspbery">I want to set up octoprint on a raspberry Pi</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="lorem_ipsum" translatable="false">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
+        volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
+        dui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu ad
+        litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse blandit eleifend
+        diam, vel rutrum tellus vulputate quis. Aliquam eget libero aliquet, imperdiet nisl a,
+        ornare ex. Sed rhoncus est ut libero porta lobortis. Fusce in dictum tellus.\n\n
+        Suspendisse interdum ornare ante. Aliquam nec cursus lorem. Morbi id magna felis. Vivamus
+        egestas, est a condimentum egestas, turpis nisl iaculis ipsum, in dictum tellus dolor sed
+        neque. Morbi tellus erat, dapibus ut sem a, iaculis tincidunt dui. Interdum et malesuada
+        fames ac ante ipsum primis in faucibus. Curabitur et eros porttitor, ultricies urna vitae,
+        molestie nibh. Phasellus at commodo eros, non aliquet metus. Sed maximus nisl nec dolor
+        bibendum, vel congue leo egestas.\n\n
+        Sed interdum tortor nibh, in sagittis risus mollis quis. Curabitur mi odio, condimentum sit
+        amet auctor at, mollis non turpis. Nullam pretium libero vestibulum, finibus orci vel,
+        molestie quam. Fusce blandit tincidunt nulla, quis sollicitudin libero facilisis et. Integer
+        interdum nunc ligula, et fermentum metus hendrerit id. Vestibulum lectus felis, dictum at
+        lacinia sit amet, tristique id quam. Cras eu consequat dui. Suspendisse sodales nunc ligula,
+        in lobortis sem porta sed. Integer id ultrices magna, in luctus elit. Sed a pellentesque
+        est.\n\n
+        Aenean nunc velit, lacinia sed dolor sed, ultrices viverra nulla. Etiam a venenatis nibh.
+        Morbi laoreet, tortor sed facilisis varius, nibh orci rhoncus nulla, id elementum leo dui
+        non lorem. Nam mollis ipsum quis auctor varius. Quisque elementum eu libero sed commodo. In
+        eros nisl, imperdiet vel imperdiet et, scelerisque a mauris. Pellentesque varius ex nunc,
+        quis imperdiet eros placerat ac. Duis finibus orci et est auctor tincidunt. Sed non viverra
+        ipsum. Nunc quis augue egestas, cursus lorem at, molestie sem. Morbi a consectetur ipsum, a
+        placerat diam. Etiam vulputate dignissim convallis. Integer faucibus mauris sit amet finibus
+        convallis.\n\n
+        Phasellus in aliquet mi. Pellentesque habitant morbi tristique senectus et netus et
+        malesuada fames ac turpis egestas. In volutpat arcu ut felis sagittis, in finibus massa
+        gravida. Pellentesque id tellus orci. Integer dictum, lorem sed efficitur ullamcorper,
+        libero justo consectetur ipsum, in mollis nisl ex sed nisl. Donec maximus ullamcorper
+        sodales. Praesent bibendum rhoncus tellus nec feugiat. In a ornare nulla. Donec rhoncus
+        libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
+        vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
+    </string>
+    <string name="spojise_na_printer">Connect to the printer</string>
+    <string name="api_key">API-key</string>
+    <string name="shared_connection">Shared connection</string>
+    <string name="kako_p_api">How to find an API key?</string>
+    <string name="kako_p_sh">How to get a shared connection link?</string>
+    <string name="settings">Settings</string>
+    <string name="printers">Printers</string>
+    <string name="log_out">Logout</string>
+    <string name="statistika_ispisa">Print statistics</string>
+    <string name="delete_profile">Delete profile</string>
+    <string name="broj_ispisa">Number of prints</string>
+    <string name="preferencija">Preferences</string>
+    <string name="dodaj_printer">Add printer</string>
+    <string name="naslov_RaspberryPi">Raspberry Pi (OctoPi) + OctoEverywhere</string>
+
+    <string name="podnaslov_a_raspberry">A) OctoPrint Installation (OctoPi)</string>
+    <string name="lista_podnaslovAA">
+• Download the OctoPi image from here.\n
+• Flash the image to a microSD card using Raspberry Pi Imager or Etcher.\n
+• Edit the octopi-wpa-supplicant.txt file on the SD card and enter your Wi-Fi credentials.\n
+• Insert the SD card into the Raspberry Pi, connect the printer, and power it on.\n
+• Find your Raspberry Pi on the network: http://octopi.local or by its IP address.
+</string>
+
+
+    <string name="podnaslov_b_raspberry">B) OctoEverywhere Installation</string>
+    <string name="lista_podnaslovBB">
+•&#160;&#160;Open OctoPrint in your browser.\n
+•&#160;&#160;Go to Settings &gt; Plugin Manager &gt; Get More\n
+•&#160;&#160;Search for “OctoEverywhere” and click Install.\n
+•&#160;&#160;Restart OctoPrint when prompted.\n
+•&#160;&#160;Go to Settings &gt; OctoEverywhere.\n
+•&#160;&#160;Click “Connect Printer”, then go to octoeverywhere.com, log in, and link your account.\n
+•&#160;&#160;Your printer is now available online via the OctoEverywhere portal.
+</string>
+
+
+    <string name="naslov_android">Android (Octo4a) + OctoEverywhere</string>
+
+    <string name="podnaslov_a_android">A) OctoPrint Installation via Octo4a</string>
+    <string name="lista_podnaslovAA_android">
+• Install the Octo4a app on your Android device (official GitHub page: https://github.com/feelfreelinux/octo4a).\n
+• Open Octo4a and follow the instructions to install OctoPrint.\n
+• Configure the necessary permissions and storage access for Octo4a.\n
+• Connect your 3D printer to the Android device via USB OTG.\n
+• Start OctoPrint from within the Octo4a app.\n
+• Once started, open OctoPrint in your browser (from the device: http://localhost:5000 or via device IP on the local network).\n
+• Go through the basic OctoPrint setup wizard.
+</string>
+
+
+    <string name="podnaslov_b_android">B) OctoEverywhere Installation</string>
+    <string name="lista_podnaslovBB_android">
+•&#160;&#160;Open OctoPrint in your browser.\n
+•&#160;&#160;Go to Settings &gt; Plugin Manager &gt; Get More\n
+•&#160;&#160;Search for “OctoEverywhere” and click Install.\n
+•&#160;&#160;Restart OctoPrint when prompted.\n
+•&#160;&#160;Go to Settings &gt; OctoEverywhere.\n
+•&#160;&#160;Click “Connect Printer”, then go to octoeverywhere.com, log in, and link your account.\n
+•&#160;&#160;Your printer is now available online via the OctoEverywhere portal.
+</string>
+
+
+    <string name="naslov_windows">Windows (local hosting) + OctoEverywhere</string>
+
+    <string name="podnaslov_a_windows">A) OctoPrint Installation on Windows</string>
+    <string name="lista_podnaslovAA_windows">
+• Install Python 3.7–3.10.<br />
+• Open Command Prompt and run:<br />\n
+&#160;&#160;&#160;&#160;python -m venv OctoPrint<br />\n
+&#160;&#160;&#160;&#160;OctoPrint\Scripts\activate<br />\n
+&#160;&#160;&#160;&#160;pip install octoprint<br />\n
+&#160;&#160;&#160;&#160;octoprint serve<br />\n
+• Open your browser and go to: http://localhost:5000<br />\n
+• Complete the initial OctoPrint setup.
+</string>
+
+
+    <string name="podnaslov_b_windows">B) OctoEverywhere Installation</string>
+    <string name="lista_podnaslovBB_windows">
+•&#160;&#160;Open OctoPrint in your browser.\n
+•&#160;&#160;Go to Settings &gt; Plugin Manager &gt; Get More\n
+•&#160;&#160;Search for “OctoEverywhere” and click Install.\n
+•&#160;&#160;Restart OctoPrint when prompted.\n
+•&#160;&#160;Go to Settings &gt; OctoEverywhere.\n
+•&#160;&#160;Click “Connect Printer”, then go to octoeverywhere.com, log in, and link your account.\n
+•&#160;&#160;Your printer is now available online via the OctoEverywhere portal.
+</string>
+    <string name="printer_name_title">Naziv printera</string>
+
+    <!-- Statusi -->
+    <string name="status_online">Online</string>
+    <string name="status_offline">Offline</string>
+
+    <!-- Temperature -->
+    <string name="template_temp_extruder">Temp dizne: %1$d °C</string>
+    <string name="template_temp_bed">Temp podloge: %1$d °C</string>
+    <string name="template_fan_speed">Brzina ventilatora: %1$d</string>
+    <string name="template_z_offset">Z-offset: %1$.2f</string>
+
+    <!-- Kontrole -->
+    <string name="controls_label">G</string>
+    <string name="title_gcode_details">Naziv G-koda</string>
+    <string name="label_textual">Tekstualni</string>
+    <string name="label_gallery">Galerija</string>
+    <string name="label_stats">Statistika</string>
+    <string name="label_price">Cijena</string>
+    <string name="action_print">Ispiši</string>
+    <string name="cd_textual">Tekstualna sekcija</string>
+    <string name="cd_gallery">Galerija slika</string>
+    <string name="cd_stats">Statistika</string>
+    <string name="cd_price">Cijena izrade</string>
+    <string name="ispis">Print</string>
+
+</resources>

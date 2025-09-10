@@ -1,0 +1,58 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.PrintMate" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:logo">@drawable/logoandiconwhite</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <color name="background_color_primary">#2F2250</color>
+    <color name="background_color_secondary">#65558F</color>
+    <color name="background_color_primary_variant">#2F2250</color>
+    <color name="home_backgroun">#65558F</color>
+    <color name="nav_item">#2A1958</color>
+    <!--Gumbi-->
+    <color name="button_color_primary">#2A1958</color>
+    <color name="button_color_secondary">#65558F</color>
+    <color name="button_color_secondary_variant">#EADDFF</color>
+
+    <!--Inputi-->
+    <color name="input_primary">#65558F</color>
+    <color name="input">#65558F</color>
+    <color name="input_secondary">#3A2B61</color>
+
+    <!--Text-->
+    <color name="text_color_primary">#F5F5F5</color>
+    <color name="text_color_primary_variant">#F5F5F5</color>
+
+
+    <color name="fab_color_primary">#EADDFF</color>
+
+    <color name="shadow_color">#CA181818</color>
+    <color name="icons">@color/printMateWhite</color>
+    <color name="text_upute">@color/printMateWhite</color>
+    <!-- Base application theme. -->
+    <style name="MySweetDialogStyle" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">24dp</item>
+        <item name="android:background">@drawable/sweet_dialog_bg</item>
+        <item name="android:textColorPrimary">@color/black</item>
+    </style>
+
+    <style name="SearchViewWhite" parent="Widget.AppCompat.SearchView">
+        <!-- boja unesenog teksta -->
+        <item name="android:textColor">@android:color/white</item>
+        <!-- boja hint-a -->
+        <item name="android:textColorHint">@android:color/white</item>
+    </style>
+
+</resources>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+
+    android:layout_height="wrap_content"
+    android:layout_marginTop="12dp"
+    android:layout_marginBottom="12dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    app:cardCornerRadius="18dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true"
+    android:background="@drawable/rounded_printer"
+    app:cardBackgroundColor="@android:color/white">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:padding="16dp"
+    android:background="@drawable/rounded_printer">
+
+<ImageView
+    android:id="@+id/imgGkodThumb"
+    android:layout_width="64dp"
+    android:layout_height="64dp"
+    android:scaleType="centerInside"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    android:src="@drawable/baseline_code_24" />
+
+<!-- Naziv G-koda sada ima veći textSize i više prostora -->
+<TextView
+    android:id="@+id/txtGkodName"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:text="Neki G-KOD"
+    android:textColor="@color/printMateDarkPurlupel"
+    android:textSize="20sp"
+    android:fontFamily="@font/roboto_bold"
+    android:gravity="center_vertical"
+    app:layout_constraintStart_toEndOf="@id/imgGkodThumb"
+    app:layout_constraintTop_toTopOf="@id/imgGkodThumb"
+    app:layout_constraintBottom_toBottomOf="@id/imgGkodThumb"
+    app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>

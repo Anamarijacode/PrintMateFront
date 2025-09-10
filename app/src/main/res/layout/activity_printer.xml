@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.PrinterActivity"
+    android:background="@color/background_color_primary_variant">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutPrinter"
+        android:layout_width="344dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/rounded_search_bar"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerViewPrinter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/todaberitePrinter">
+
+
+        <!-- umesto ImageView filterSpinnerPrinter -->
+        <Spinner
+            android:id="@+id/filterSpinnerPrinter"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="10dp"
+            android:padding="4dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/separatorPrinter"/>
+
+
+        <ImageView
+            android:id="@+id/separatorPrinter"
+            android:layout_width="1dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginEnd="5dp"
+            android:background="@color/background_color_primary_variant"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/searchViewPrinter"
+            app:layout_constraintStart_toEndOf="@+id/filterSpinnerPrinter"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchViewPrinter"
+            android:layout_width="208dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="54dp"
+            android:layout_marginBottom="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/separatorPrinter"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--search.setQueryHint("Custom Search Hint");
+        SearchView searchView = findViewById(R.id.searchView);
+        ImageView searchIcon = searchView.findViewById(androidx.appcompat.R.id.search_mag_icon);
+searchIcon.setColorFilter(ContextCompat.getColor(this, R.color.tvoja_boja), PorterDuff.Mode.SRC_IN);
+ImageView closeButton = searchView.findViewById(androidx.appcompat.R.id.search_close_btn);
+closeButton.setColorFilter(ContextCompat.getColor(this, R.color.tvoja_boja), PorterDuff.Mode.SRC_IN);
+EditText searchText = searchView.findViewById(androidx.appcompat.R.id.search_src_text);
+searchText.setTextColor(ContextCompat.getColor(this, R.color.tvoja_boja));
+searchText.setHintTextColor(ContextCompat.getColor(this, R.color.tvoja_boja));
+
+-->
+
+
+        <!-- SearchView -->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/todaberitePrinter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/odaberite_printer"
+        android:textColor="@color/text_color_primary_variant"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/fabPrinter"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewPrinter"
+        android:layout_width="419dp"
+        android:layout_height="535dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageViewPrinter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutPrinter" />
+
+    <ImageView
+        android:id="@+id/imageViewPrinter"
+        android:layout_width="241dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="84dp"
+        android:layout_marginEnd="86dp"
+        android:layout_marginBottom="76dp"
+        android:src="?android:logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabPrinter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="11dp"
+        android:background="@color/fab_color_primary"
+        android:backgroundTint="@color/fab_color_primary"
+        android:src="@drawable/f2250_arrow"
+        app:borderWidth="0dp"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutPrinter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

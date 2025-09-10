@@ -1,0 +1,65 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.PrintMate" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:logo">@drawable/logoandiconviolet</item>
+        <!-- Customize your theme here. -->
+    </style>
+    <!--Pozadine-->
+    <color name="background_color_primary">#65558F</color>
+    <color name="background_color_secondary">#F5F5F5</color>
+    <color name="home_backgroun">#F5F5F5</color>
+    <color name="nav_item">#D1BFFF</color>
+    <color name="nav_item_secondery">#D1BFFF</color>
+    <!--Gumbi-->
+    <color name="button_color_primary">#65558F</color>
+    <color name="button_color_secondary">#EADDFF</color>
+    <color name="button_color_primary_varian">#EADDFF</color>
+    <color name="button_color_secondary_variant">#65558F</color>
+
+    <!--Inputi-->
+    <color name="input_primary">#F1EBFC</color>
+    <color name="input">#65558F</color>
+    <color name="input_secondary">#EADDFF</color>
+
+    <!--Text-->
+    <color name="text_color">#65558F</color>
+    <color name="text_color_primary">#3B1D71</color>
+    <color name="text_color_secondary">#F5F5F5</color>
+    <color name="text_color_primary_variant">#65558F</color>
+
+    <color name="background_color_primary_variant">#F5F5F5</color>
+
+    <color name="fab_color_primary">#EADDFF</color>
+
+    <color name="shadow_color">#CABBBBBB</color>
+
+
+    <color name="icons">@color/printMatePurpule</color>
+    <color name="text_upute">@android:color/black</color>
+    <!-- Base application theme. -->
+    <style name="MySweetDialogStyle" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">24dp</item>
+        <item name="android:background">@drawable/sweet_dialog_bg</item>
+        <item name="android:textColorPrimary">@color/black</item>
+    </style>
+    <style name="SearchViewWhite" parent="Widget.AppCompat.SearchView">
+        <!-- boja unesenog teksta -->
+        <item name="android:textColor">@android:color/white</item>
+        <!-- boja hint-a -->
+        <item name="android:textColorHint">@android:color/white</item>
+    </style>
+
+
+
+</resources>

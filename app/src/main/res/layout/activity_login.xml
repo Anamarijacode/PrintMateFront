@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/background_color_primary"
+    tools:context=".Activity.LoginActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp">
+
+        <!-- ORIGINAL: Logo -->
+        <ImageView
+            android:id="@+id/printMateLogo"
+            android:layout_width="363dp"
+            android:layout_height="176dp"
+            android:layout_marginTop="48dp"
+            android:src="@drawable/logoandiconwhite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+           />
+
+        <!-- ORIGINAL: Email label -->
+        <TextView
+            android:id="@+id/temail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/email"
+            android:textColor="@color/text_color_secondary"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/printMateLogo" />
+
+        <!-- ORIGINAL: Email input -->
+        <EditText
+            android:id="@+id/etemail"
+            android:layout_width="366dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/rounded_edittext"
+            android:fontFamily="@font/poppins"
+            android:hint="@string/enter_email"
+            android:paddingStart="24dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="24dp"
+            android:textColor="@color/text_color_primary"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/temail" />
+
+        <!-- ORIGINAL: Lozinka label -->
+        <TextView
+            android:id="@+id/tlozinka"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="28dp"
+            android:fontFamily="@font/poppins"
+            android:text="@string/lozinka"
+            android:textColor="@color/text_color_secondary"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etemail" />
+
+        <!-- ORIGINAL: Lozinka input -->
+        <EditText
+            android:id="@+id/etlozinka"
+            android:layout_width="366dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/rounded_edittext"
+            android:fontFamily="@font/poppins"
+            android:hint="@string/unseite_lozinku"
+            android:paddingStart="24dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="24dp"
+            android:textColor="@color/text_color_primary"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tlozinka"
+            android:inputType="textPassword" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnPrijavise"
+            android:layout_width="322dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="44dp"
+            android:layout_marginEnd="45dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/button_color_secondary"
+            android:fontFamily="@font/poppins"
+            android:paddingTop="5dp"
+            android:text="@string/prijavi_se_btn"
+            android:textAllCaps="false"
+            android:textColor="@color/text_color_primary"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@id/constraintLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="322dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="44dp"
+            android:layout_marginEnd="45dp"
+            android:layout_marginBottom="120dp"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="@color/button_color_secondary"
+            android:clickable="true"
+            android:focusable="true"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/iconeImage"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@drawable/google"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/separatorImage"
+                android:layout_width="1dp"
+                android:layout_height="42dp"
+                android:background="@color/background_color_primary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iconeImage"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tPrijaviSeSaGooglom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/poppins"
+                android:paddingStart="24dp"
+                android:paddingTop="5dp"
+                android:text="@string/prijavi_se_btn_google"
+                android:textColor="@color/text_color_primary"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/separatorImage"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tvLinkRegistracija"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/nemas_racun_link"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/constraintLayout" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
